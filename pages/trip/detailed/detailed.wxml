@@ -1,0 +1,62 @@
+<nav-bar bgColor="bg-blue" isBack="{{true}}">
+  <view slot='content'>
+    行程
+  </view>
+</nav-bar>
+
+<view class="cu-card case" style='margin-top:20px'>
+  <view class="cu-item shadow ">
+    <view class='flex justify-between'>
+      <view >
+        <view class=" text-xl padding">
+          <text class="text-black text-bold">峨眉山别样游</text>
+        </view>
+        <view class=" text-lg padding">
+          <text class="text-black">出行方式：自驾</text>
+        </view>
+      </view>
+      <view cl>
+        <view class='padding'>
+          <button class="cu-btn round bg-red shadow">查看游记</button>
+        </view>
+        <view class='flex justify-center'>
+            <image src='/icon/shoucang.png' class='png' style='height:30px;width:30px;' mode='aspectFit'></image>
+            <text class='text-xs'>收藏</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="cu-list menu sm-border padding">
+  <view class="cu-item">
+    <navigator class="content" hover-class="none" url="../detailedhome/detailed-home" >
+      <image src="/icon/hi.png" class="png" mode="aspectFit"></image>
+      <text class="text-black">前言</text>
+    </navigator>
+  </view>
+  <view class="cu-item ">
+    <view class="content">
+      <image src="/icon/xincheng.png" class="png" mode="aspectFit"></image>
+      <text class="text-black">行程</text>
+    </view>
+  </view>
+  <view class="cu-item ">
+    <button class="cu-btn content" open-type="contact">
+      <image src="/icon/huaxiao.png" class="png" mode="aspectFit"></image>
+      <text class="text-black">花销</text>
+    </button>
+  </view>
+  <view class="cu-item ">
+    <navigator class="content" hover-class="none" url="../list/list" >
+      <image src="/icon/qindan.png" class="png" mode="aspectFit"></image>
+      <text class="text-black">清单</text>
+    </navigator>
+  </view>
+  <view class="cu-item">
+    <navigator class="content" hover-class="none" url="../list/list" open-type="redirect">
+      <image src="/icon/jiehuo.png" class="png" mode="aspectFit"></image>
+      <text class="text-black">解惑</text>
+    </navigator>
+  </view>
+
+</view>

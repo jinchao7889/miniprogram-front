@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "donkey":"/mycompent/donkey/donkey"
+  }
+}

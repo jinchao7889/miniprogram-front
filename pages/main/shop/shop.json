@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "search-nav-bar":"/mycompent/searchnavbar/search-nav-bar"
+  }
+}

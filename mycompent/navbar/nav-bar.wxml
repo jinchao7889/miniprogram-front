@@ -1,0 +1,31 @@
+<view class="cu-custom" style="height:{{CustomBar+20}}px">
+  <view class="cu-bar fixed justify-between {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}" style="height:{{CustomBar+20}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
+    <view class='flex align-center'>
+      <view class="action" bindtap="BackPage" wx:if="{{isBack}}">
+        <text class="icon-back"></text>
+        <slot name="backText"></slot>
+      </view>
+      <view class="action border-custom" wx:if="{{isCustom}}" style="width:{{Custom.width}}px;height:{{Custom.height}}px;margin-left:calc(750rpx - {{Custom.right}}px)">
+        <text class="icon-back" bindtap="BackPage"></text>
+        <text class="icon-homefill" bindtap="toHome"></text>
+      </view>
+
+      <view style="top:{{StatusBar}}px">
+        <view class="cu-avatar lg round" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+      </view>
+      <view class='margin-left'>
+      <view class='text-lg'>
+      <text>lallalala</text>
+      </view>
+      <view class='text-xs'>
+      <text>2018年3月18日</text>
+      </view>
+      </view>
+    </view>
+    <view>
+        <button class="cu-btn round bg-red shadow">关注</button>
+      </view>
+  </view>
+  <slot name="right"></slot>
+
+</view>

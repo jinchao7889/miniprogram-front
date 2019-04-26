@@ -38,7 +38,7 @@ function wxPromise(method, url, data,header) {
         wx.showToast({
           title: '服务器暂时无法连接',
           icon: 'loading',
-          duration: 2000
+          duration: 1000
         })
         reject(res);
       }

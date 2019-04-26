@@ -1,0 +1,66 @@
+	.tower-swiper .tower-item {
+		transform: scale(calc(0.5 + var(--index) / 10));
+		margin-left: calc(var(--left) * 100rpx - 150rpx);
+		z-index: var(--index);
+	}
+
+
+  page{
+    background: white;
+  }
+
+.canui-shop-goods-list{
+    padding:10rpx 20rpx 0px;
+}
+.canui-shop-goods-list .nav-li{
+    background-image:initial;
+    background-size:initial;
+    background-position:initial;
+    background:initial;
+    padding:0;
+    width:345rpx;
+    margin:0 5rpx 20rpx;
+    border-radius:0;
+}
+.canui-shop-goods-list .nav-li image{
+    width:100%;
+    height:345rpx;
+    z-index:99999;
+    border-radius:15rpx 15rpx 0 0;
+}
+.canui-shop-goods-list .nav-li .nav-li-box{
+    position: relative;
+    background: #Ffff;
+    padding: 10rpx 20rpx;
+    border-radius: 0 0 15rpx 15rpx;
+    box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
+    top: -6rpx;
+    z-index: 0;
+}
+.canui-shop-goods-list .nav-li .nav-li-box .nav-title {
+    font-size: 28 rpx;
+}
+.canui-shop-goods-list .nav-li text{
+    position: relative;
+    right:initial;
+    top:initial;
+    font-size:inherit;
+    width:inherit;
+    height:initial;
+    text-align:initial;
+    line-height:inherit;
+}
+.canui-shop-goods-list .nav-li .shop-zx{
+    position: relative;
+    padding:10rpx 0;
+}
+.canui-shop-goods-list .nav-li .shop-zx .text-sm{
+    font-size:20rpx;
+}
+.canui-shop-goods-list .nav-li .shop-zx .text-price{
+    font-size:30rpx;
+    margin-right:8rpx;
+}
+
+
+

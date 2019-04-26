@@ -1,0 +1,60 @@
+ 
+ <search-nav-bar op="{{op}}"  isBack="{{true}}">
+</search-nav-bar >
+
+ <swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+    <swiper-item wx:for="{{swiperList}}" wx:key>
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </swiper-item>
+  </swiper>
+
+  <view class="flex-sub text-center padding">
+      <view class=" text-xxl ">
+        <text class="text-black text-bold">| 随心出行 即刻出发 |</text>
+      </view>
+      <view class=" text-grey padding">START IMMM</view>
+    </view>
+
+ <view class='nav-list solids-bottom'>
+    <navigator open-type="navigate" hover-class='none' url="/pages/basics/{{item.name}}/{{item.name}}" class="nav-li bg-blue" >
+      <view class="nav-title">单反相机</view>
+      <view class="nav-name">CAMERA</view>
+      <text class='icon-camerafill'></text>
+    </navigator>
+     <navigator open-type="navigate" hover-class='none' url="/pages/basics/{{item.name}}/{{item.name}}" class="nav-li bg-blue">
+      <view class="nav-title">航拍无人机</view>
+      <view class="nav-name">UAV</view>
+      <text class='icon-camerafill'></text>
+    </navigator>
+     <navigator open-type="navigate" hover-class='none' url="/pages/basics/{{item.name}}/{{item.name}}" class="nav-li bg-blue" >
+      <view class="nav-title">旅行设备</view>
+      <view class="nav-name">PARTE</view>
+      <text class='icon-camerafill'></text>
+    </navigator>
+     <navigator open-type="navigate" hover-class='none' url="/pages/basics/{{item.name}}/{{item.name}}" class="nav-li bg-blue" >
+      <view class="nav-title">其他</view>
+      <view class="nav-name">OTHERS</view>
+      <text class='icon-camerafill'></text>
+    </navigator>
+  </view>
+
+   <view class="flex-sub text-center padding">
+      <view class=" text-xxl ">
+        <text class="text-black text-bold">| 热销租赁 即租即用 |</text>
+      </view>
+      <view class=" text-grey padding">START IMMM</view>
+    </view>
+
+<view class='nav-list canui-shop-goods-list'>
+    <navigator wx:for="{{swiperList}}" wx:key="{{item.index}}" class="nav-li" open-type="navigate" hover-class='none' url="/pages/main/shop/goodsdetialed/goods-detailed">
+        <image src="{{item.url}}" class='good-image raduis' mode="aspectFill"></image>
+        <view class="nav-li-box">
+            <view class=" canui-xzwz  text-xl">测试</view>
+            <view class="shop-zx">
+                <text class="text-price text-red text-xs">1000 </text>
+                <text class="text-gray text-sm">200人租赁</text>
+            </view>
+        </view>
+    </navigator>
+</view>

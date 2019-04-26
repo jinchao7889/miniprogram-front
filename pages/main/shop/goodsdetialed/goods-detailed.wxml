@@ -1,0 +1,65 @@
+<!--商品轮播图-->
+<swiper class="screen-swiper square-dot bg-white" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+    <swiper-item wx:for="{{swiperlist}}" wx:key="index">
+        <image src="{{item}}" mode='aspectFill'></image>
+    </swiper-item>
+</swiper>
+
+<!--左上角按钮-->
+<view class="canui-head-box " style="top:{{StatusBar}}px;">
+    <navigator   open-type="navigateBack" hover-class="none">
+    <view class='icon-back'  style='heigth:22px'></view>
+    </navigator>
+</view>
+
+<!--商品价格-->
+<view class="bg-white  felx justify-center align-center padding">
+<text class="text-price text-red text-xl">1000.00</text>
+  <view class="cu-tag line-red text-xs margin-left">认证免押</view>
+</view>
+
+<!--商品名称-->
+<view class="bg-white canui-goods-box canui-xzwz text-xl text-black">DJI 大疆 御 Mavic Air 便携可折叠4K无人机 高清航拍</view>
+
+<!--商品属性-->
+<view class="bg-white grid col-3 canui-goods-box text-gray text-sm solids-bottom">
+    <view class='padding-sm'>库存：9999</view>
+    <view class='padding-sm text-center'>月销量：98笔</view>
+    <view class='padding-sm text-right'>快递包邮</view>
+</view>
+
+
+<scroll-view scroll-x class="bg-white nav text-center">
+  <view class="cu-item {{0==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="0">
+    <text class="icon-edit"></text> 商品详情
+  </view>
+  <view class="cu-item {{1==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="1">
+    <text class="icon-comment"></text> 评价
+  </view>
+
+</scroll-view>
+
+
+<view class="bg-white padding cauni-details-box">
+    <import src="/wxParse/wxParse.wxml"/>
+<view class="content">
+ <!-- 这一块是富文本 显示的内容区 -->
+ <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+
+</view>
+
+</view>
+<!--TabbarBot为适配全面屏的，如果是全面屏，则底部多出一截空白-->
+<view class="cu-bar bg-white  tabbar border shop canui-foor-fixed canui-tabbar-bottom ">
+ 
+    <button class="action text-grey" open-type='contact'>
+        <view class='icon-service'></view> 客服
+    </button>
+    <view class="action text-grey">
+        <view class='icon-cart'></view> 购物车
+    </view>
+    <view class='btn-group'>
+        <button class='cu-btn bg-orange round shadow-blur'>加入购物车</button>
+        <button class='cu-btn bg-red round shadow-blur'>立即租赁</button>
+    </view>
+</view>

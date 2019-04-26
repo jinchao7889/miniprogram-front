@@ -1,12 +1,45 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/logs/logs"
+  "pages": [
+    "pages/main/home/home",
+    "pages/main/shop/shop",
+    "pages/main/donkey/donkey",
+    "pages/mine/home/home",
+    "pages/mine/travels/travels",
+    "pages/mine/trip/trip",
+    "pages/trip/home/home",
+    "pages/trip/detailed/detailed",
+    "pages/trip/detailedhome/detailed-home",
+    "pages/auth/auth",
+    "pages/main/shop/goodsdetialed/goods-detailed",
+    "pages/travels/details/details"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+  "window": {
+    "navigationBarBackgroundColor": "#39b54a",
+    "navigationBarTitleText": "Color UI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "tabBar": {
+    "color": "#aaaaaa",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "selectedColor": "#F95A5F",
+    "list": [
+      {
+        "pagePath": "pages/main/home/home",
+        "iconPath": "icon/main_page1.png",
+        "selectedIconPath": "icon/main_page.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/mine/home/home",
+        "iconPath": "icon/mine.png",
+        "selectedIconPath": "icon/mine1.png",
+        "text": "我的"
+      }
+    ]
   }
 }

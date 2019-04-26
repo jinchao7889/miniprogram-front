@@ -1,0 +1,5 @@
+/* mycompent/searchnavbar/search-nav-bar.wxss */
+
+.bg {
+  color: #fff;
+}

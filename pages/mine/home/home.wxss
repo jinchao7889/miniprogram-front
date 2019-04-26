@@ -1,0 +1,17 @@
+/* pages/mine/mine.wxss */
+
+.bc {
+  width: 100%;
+  height:486rpx;
+  background-image: url("http://b4-q.mafengwo.net/s9/M00/B4/96/wKgBs1gAi8mAK_8eACErk-sdm7899.jpeg");
+  background-repeat: no-repeat;
+    background-position-y: center;
+  background-position-x: center;
+  background-size:100% 100%;
+
+   display: flex;
+    display: -webkit-flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+}

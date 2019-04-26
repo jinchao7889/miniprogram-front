@@ -1,0 +1,44 @@
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
+  <view slot="content">{{title[index]}}</view>
+</cu-custom>
+
+
+<preface wx:if="{{PageCur=='qianyan'}}"></preface>
+<xincheng wx:if="{{PageCur=='xincheng'}}"></xincheng>
+<qindan wx:if="{{PageCur=='qindan'}}"></qindan>
+<huaxiao wx:if="{{PageCur=='huaxiao'}}"></huaxiao>
+<jiehuo wx:if="{{PageCur=='jiehuo'}}"></jiehuo>
+<view class='cu-tabbar-height'></view>
+<view class="cu-bar tabbar bg-white shadow foot">
+  <view class="action" bindtap="NavChange" data-cur="qianyan" data-index="0">
+    <view class='icon-cu-image'>
+      <image src="/icon/hi.png"></image>
+    </view>
+    <view class="{{PageCur=='qianyan'?'text-black':'text-gray'}}">前言</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="xincheng" data-index="1">
+    <view class='icon-cu-image'>
+      <image src="/icon/xincheng.png"></image>
+    </view>
+    <view class="{{PageCur=='xincheng'?'text-black':'text-gray'}}">行程</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="huaxiao" data-index="2">
+    <view class='icon-cu-image'>
+      <image src="/icon/huaxiao.png"></image>
+    </view>
+    <view class="{{PageCur=='huaxiao'?'text-black':'text-gray'}}">花销</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="qindan" data-index="3">
+    <view class='icon-cu-image'>
+      <image src="/icon/qindan.png"></image>
+    </view>
+    <view class="{{PageCur=='qindan'?'text-black':'text-gray'}}">清单</view>
+  </view>
+
+  <view class="action" bindtap="NavChange" data-cur="jiehuo" data-index="4">
+    <view class='icon-cu-image'>
+      <image src="/icon/jiehuo.png"></image>
+    </view>
+    <view class="{{PageCur=='jiehuo'?'text-black':'text-gray'}}">解惑</view>
+  </view>
+</view>

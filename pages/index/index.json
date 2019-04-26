@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "main_page":"/pages/main/home/home"
+  }
 }

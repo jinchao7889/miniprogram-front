@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "travels-main": "/mycompent/travels/travelsmain/travels-main",
+    "bar-custom": "/mycompent/barcustom/bar-custom"
+  }
+}

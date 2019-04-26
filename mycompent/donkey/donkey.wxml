@@ -1,0 +1,28 @@
+<view class="cu-card case  ">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image src="http://you8.wzqingke.com.cn/yn/picture/1536413860113453.jpg" mode="aspectFill"></image>
+      <view class="cu-tag bg-blue">最新</view>
+    
+    </view>
+  <view class='padding-sm'>
+    <view class=" text-xl ">
+        <text class="text-black text-bold">公益支教行--甘孜州</text>
+    </view>
+    <view class=" text-df margin-top-xs">
+        <text class="text-black ">时间:</text>
+    </view>
+     <view class=" text-df margin-top-xs">
+        <text class="text-black ">人数:(已报名)</text>
+    </view>
+    <view class=" text-df margin-top-xs">
+        <text class="text-black ">集合地点:</text>
+    </view>
+    <view class=" text-df margin-top-xs">
+        <text class=" text-black">报名截止时间:</text>
+    </view>
+   
+  </view>
+  </view>
+</view>
+

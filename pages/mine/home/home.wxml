@@ -1,0 +1,47 @@
+<!--pages/mine/mine.wxml-->
+
+ <view class=' bc' >
+ <view class="cu-avatar lg round " style="background-image:url({{userInfo.portraitUrl}});">
+     <view class="cu-tag badge {{userInfo.gender==2?'icon-female bg-pink':'icon-male bg-blue'}}"></view>
+
+ </view >
+ <text style='color:white'>{{userInfo.nickname}}</text>
+ </view>
+
+
+  <view class="cu-list menu sm-border card-menu margin-top">
+    <view class="cu-item arrow}}">
+      <view class="content">
+        <navigator class="content" hover-class="none" url="/pages/mine/trip/trip">
+       <image src="/icon/xincheng.png" class="png" mode="aspectFit"></image>
+        <text class="text-grey">我的行程</text>
+        </navigator>
+
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content">
+        <image src="/icon/youji.png" class="png" mode="aspectFit"></image>
+        <text class="text-grey">我的游记</text>
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <button class="cu-btn content" open-type="contact">
+        <image src="/icon/guanzhu.png" class="png" mode="aspectFit"></image>
+        <text class="text-grey">我的关注</text>
+      </button>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class="content" hover-class="none" url="../list/list" open-type="redirect">
+        <image src="/icon/dingdan.png" class="png" mode="aspectFit"></image>
+        <text class="text-grey">订单信息</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content">
+        <image src="/icon/mine.png" class="png" mode="aspectFit"></image>
+        <text class="text-grey">个人认证</text>
+      </view>
+    </view>
+   </view>  
+    

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "trip-main":"/mycompent/trip/tripmain/trip-main"
+  }
+}

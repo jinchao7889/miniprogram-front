@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "preface":"/mycompent/trip/preface/preface",
+    "xincheng": "/mycompent/trip/xincheng/xincheng",
+    "huaxiao": "/mycompent/trip/huaxiao/huaxiao",
+    "jiehuo": "/mycompent/trip/jiehuo/jiehuo",
+    "qindan": "/mycompent/trip/qindan/qindan"
+  }
+}

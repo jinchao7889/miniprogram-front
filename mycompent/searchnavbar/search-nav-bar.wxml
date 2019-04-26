@@ -1,0 +1,23 @@
+<view class="cu-custom tab "  style="height:{{CustomBar}}px">
+  <view class="cu-bar fixed justify-between {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}} bg "  style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}} ;background-color:rgba(0,0,0,{{op}}); ">
+    <view class='flex align-center 'style='width:100%'>
+      <view class="action"  bindtap="BackPage" wx:if="{{isBack}}">
+        <text class="icon-back"></text>
+        <slot name="backText"></slot>
+      </view>
+      <view class="action border-custom" wx:if="{{isCustom}}" style="width:{{Custom.width}}px;height:{{Custom.height}}px;margin-left:calc(750rpx - {{Custom.right}}px)">
+        <text class="icon-back" bindtap="BackPage"></text>
+        <text class="icon-homefill" bindtap="toHome"></text>
+      </view>
+
+      <view  style='width:100%'>
+        <view class=" search {{bgColor}}" >
+          <view class="search-form round " >
+            <text class="icon-search"></text>
+            <input type="text"  placeholder="云台、单反" confirm-type="search"></input>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

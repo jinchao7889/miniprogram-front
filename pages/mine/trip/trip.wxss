@@ -1,0 +1,26 @@
+/* pages/mine/trip/trip.wxss */
+@import '/mycompent/listload/refreshView.wxss';
+ .bg{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  color: #fff;
+}
+
+.shuxian{
+  position:relative;
+  left: 10rpx;
+  width: 3rpx;
+  height: 100rpx;
+  background: #fff;
+}
+
+.bgmengban{
+  position: relative;
+  width: 100%;
+}
+
+.scroll_container{
+  position: absolute;
+z-index: -1;
+}
+
+

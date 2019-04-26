@@ -1,0 +1,5 @@
+/* pages/travels/details/details.wxss */
+@import "/wxParse/wxParse.wxss";
+image{
+  width: 100%;
+}

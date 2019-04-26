@@ -1,0 +1,44 @@
+<view class="cu-card case ">
+  <view class="cu-item shadow bg-blue">
+    <view class="image " >
+      <image src="{{tripImage}}" style='display:block;' mode="widthFix"></image>
+      <view class="cu-tag bg-blue">精选</view>
+      <view class="cu-bar bg " style='justify-content:flex-start'>
+        <view class=' flex align-center padding'  >
+          <view class="" >
+          <text class=" text-sl text-white align-end" style='text-align:bottom'>{{days}}</text>
+            <text class="margin-left-xs text-xxl text-white" >天</text>
+          </view>
+         
+          
+        </view>
+        <view class='shuxian ' >
+          </view >
+        <view class=" margin-left-lg" style='width:300px'>
+            <view class=" text-xl  " >
+          <text class="text-left text-bold  text-white" >{{title}}</text>
+          </view>
+            <view >
+            <text class=" text-left text-white" >出行方式:自驾 {{tripMode}}</text>
+          </view>
+            <view  >
+            <text class="text-left  text-white" >人均消费:5000 {{tripMode}}</text>
+            </view>
+          </view>
+            <view style='width:100%' class='flex justify-center' >
+            <view>
+              <view class="cu-avatar round lg" style="background-image:url(https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1872915704,741224834&fm=85&app=63&f=JPEG?w=121&h=75&s=7CB019D7C8B32594790C81990300A040);"></view>
+              <view class=' text-sm'>
+                  <text class="icon-appreciatefill margin-lr-xs"></text> 20
+                  <text class="icon-messagefill margin-lr-xs"></text> 30
+              </view>
+            </view>
+          </view>
+            </view>
+         
+      </view>
+      
+           
+    </view>
+  </view>
+
