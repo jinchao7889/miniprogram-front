@@ -1,2 +1,3 @@
-<!--pages/mine/travels/travels.wxml-->
-<text>pages/mine/travels/travels.wxml</text>
+<cu-custom  bgColor="bg-blue" isBack="{{true}}">
+  <view slot="content">我的游记</view>
+</cu-custom>

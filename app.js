@@ -49,6 +49,9 @@ App({
   globalData: {
     userInfo: null,
     login_url: host + '/authentication/openid',
+    
+    add_trip: host +'/trip/add',
+
     authorization: 'Basic ZG9ua2V5OmRvbmtleS1zZWNyZXQ=',
     ColorList: [{
       title: '嫣红',

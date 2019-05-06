@@ -21,8 +21,10 @@
     </view>
     <view class="cu-item arrow">
       <view class="content">
+      <navigator class="content" hover-class="none" url="/pages/mine/travels/travels">
         <image src="/icon/youji.png" class="png" mode="aspectFit"></image>
         <text class="text-grey">我的游记</text>
+        </navigator>
       </view>
     </view>
     <view class="cu-item arrow">

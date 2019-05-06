@@ -1,80 +1,96 @@
 <!--pages/travels/details/details.wxml-->
 <nav-bar isBack="{{true}}" bgColor="bg-blue"></nav-bar>
-<image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556273509728&di=c47cf0961a5c3d1054424a1274257b53&imgtype=0&src=http%3A%2F%2Fgss0.baidu.com%2F9fo3dSag_xI4khGko9WTAnF6hhy%2Flvpics%2Fs%3D800%2Fsign%3D6edd4e81d21b0ef468e8955eedc551a1%2F0b55b319ebc4b74589b6b1b9cffc1e178a82157a.jpg' mode='aspectFill'></image>
-<view class='solid-bottom padding bg-white' >
+<image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556273509728&di=c47cf0961a5c3d1054424a1274257b53&imgtype=0&src=http%3A%2F%2Fgss0.baidu.com%2F9fo3dSag_xI4khGko9WTAnF6hhy%2Flvpics%2Fs%3D800%2Fsign%3D6edd4e81d21b0ef468e8955eedc551a1%2F0b55b319ebc4b74589b6b1b9cffc1e178a82157a.jpg'
+  mode='aspectFill'></image>
+<view class='solid-bottom padding bg-white'>
   <view class=" text-xl ">
-        <text class="text-black text-bold">峨眉山的别样游</text>
-      </view>
-      <view class='flex padding justify-between '>
-      <view class=" text-sm ">
-        <text class="text-grey">出发时间:</text>
-      </view>
+    <text class="text-black text-bold">峨眉山的别样游</text>
+  </view>
+  <view class='flex padding justify-between '>
+    <view class=" text-sm ">
+      <text class="text-grey">出发时间:</text>
+    </view>
 
-        <view class=" text-sm ">
-          <text class="text-grey">旅行天数:</text>
-        </view>
-      </view>
-       
+    <view class=" text-sm ">
+      <text class="text-grey">旅行天数:</text>
+    </view>
+  </view>
+
 </view>
 
 <view class='bg-white padding text-lg text-black solid-bottom'>
 
-     <import src="/wxParse/wxParse.wxml"/>
- <!-- 这一块是富文本 显示的内容区 -->
- <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  <import src="/wxParse/wxParse.wxml" />
+  <!-- 这一块是富文本 显示的内容区 -->
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
 
 
 </view>
 <view class=' padding bg-white'>
-<text class="text-black text-xl">评论(101)</text>
+  <text class="text-black text-xl">评论(101)</text>
 
-    <view class="cu-list menu-avatar comment ">
-      <view class="cu-item">
-        <view class="cu-avatar round bg-blue"></view>
-        <view class="content">
-          <view class="text-gray">小强</view>
-          <view class=" text-black text-content text-df">
-            你好，请问爬上山需要多久啊，体力不好的人可以吗
-          </view>
-          <view class="bg-grey padding-xs radius margin-top-sm  text-sm">
-            <view class="flex">
-              <view>作者：</view>
-              <view class="flex-sub">不行,爬上去需要一天 时间，不过可以坐缆车</view>
-            </view>
-          </view>
-          <view class="margin-top-sm flex justify-between">
-            <view class="text-gray text-sm">2018年12月4日</view>
-            <view>
-              <text class="icon-appreciatefill text-red"></text>
-              <text class="icon-messagefill text-gray margin-left-sm"></text>
-            </view>
+  <view class="cu-list menu-avatar comment ">
+    <view class="cu-item">
+      <view class="cu-avatar round bg-blue"></view>
+      <view class="content">
+        <view class="text-gray">小强</view>
+        <view class=" text-black text-content text-df">
+          你好，请问爬上山需要多久啊，体力不好的人可以吗
+        </view>
+        <view class="bg-grey padding-xs radius margin-top-sm  text-sm">
+          <view class="flex">
+            <view>作者：</view>
+            <view class="flex-sub">不行,爬上去需要一天 时间，不过可以坐缆车</view>
           </view>
         </view>
-      </view>
-      <view class="cu-item">
-        <view class="cu-avatar round bg-red" ></view>
-        <view class="content">
-          <view class="text-gray">小黑</view>
-          <view class="text-black text-content text-df">
-            写的真好，赞
-          </view>
-          <view class="bg-grey padding-xs radius margin-top-sm  text-sm">
-            <view class="flex">
-              <view>作者：</view>
-              <view class="flex-sub">谢谢</view>
-            </view>
-            
-          </view>
-          <view class="margin-top-sm flex justify-between">
-            <view class="text-gray text-sm">2018年12月4日</view>
-            <view>
-              <text class="icon-appreciate text-gray"></text>
-              <text class="icon-messagefill text-gray margin-left-sm"></text>
-            </view>
+        <view class="margin-top-sm flex justify-between">
+          <view class="text-gray text-sm">2018年12月4日</view>
+          <view>
+            <text class="icon-appreciatefill text-red"></text>
+            <text class="icon-messagefill text-gray margin-left-sm"></text>
           </view>
         </view>
       </view>
     </view>
+    <view class="cu-item">
+      <view class="cu-avatar round bg-red"></view>
+      <view class="content">
+        <view class="text-gray">小黑</view>
+        <view class="text-black text-content text-df">
+          写的真好，赞
+        </view>
+        <view class="bg-grey padding-xs radius margin-top-sm  text-sm">
+          <view class="flex">
+            <view>作者：</view>
+            <view class="flex-sub">谢谢</view>
+          </view>
 
+        </view>
+        <view class="margin-top-sm flex justify-between">
+          <view class="text-gray text-sm">2018年12月4日</view>
+          <view>
+            <text class="icon-appreciate text-gray"></text>
+            <text class="icon-messagefill text-gray margin-left-sm"></text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="cu-bar tabbar bg-white shadow foot">
+  <view class="action" bindtap="goTrip" data-cur="qianyan" data-index="0">
+    <view class='icon-cu-image'>
+      <image src="/icon/qindan.png"></image>
+    </view>
+    <view class="{{PageCur=='qianyan'?'text-black':'text-gray'}}">查看行程</view>
+  </view>
+
+  <view class="action"  data-cur="xincheng" data-index="1">
+    <view class='icon-cu-image'>
+      <image src="/icon/ears.png"></image>
+    </view>
+    <view class="{{PageCur=='xincheng'?'text-black':'text-gray'}}">浏览数量</view>
+  </view>
 
 </view>
