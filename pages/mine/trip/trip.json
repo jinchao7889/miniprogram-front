@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "trip-item":"/mycompent/trip/tripmine/trip-mine"
-  }
+  },
+  "onReachBottomDistance": 50
 }

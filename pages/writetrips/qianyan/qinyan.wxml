@@ -1,0 +1,7 @@
+<writenavbar-cmp bgColor="bg-blue" isBack="{{true}}" bindsavecontent='savecontent' bindbackpage='backpage'>
+  <view slot="content">编辑前言</view>
+</writenavbar-cmp>
+
+<view class='bg-white'>
+<textarea class='qianyan-textarea padding-sm bg-white' placeholder='您对旅行目的地的风俗介绍，可以给出发前的驴友推荐看的书，视频等推荐，其他的相关注意事项都可以在前言中表述！' bindinput='gettextcontent' maxlength='-1' value='{{content}}'></textarea>
+</view>

@@ -7,18 +7,7 @@ Component({
     addGlobalClass: true,
   },
   properties: {
-    days: {
-      type: Number
-    },
-    title: {
-      type: String
-    },
-    tripMode: {
-      type: String
-    },
-    tripImage: {
-      type: String
-    }
+    tripcontent:Object
   },
 
   /**

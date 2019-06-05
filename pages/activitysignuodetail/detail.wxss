@@ -1,0 +1,5 @@
+/* pages/activitysignuodetail/detail.wxss */
+.btn{
+  position: fixed;
+  bottom: 10rpx;
+}

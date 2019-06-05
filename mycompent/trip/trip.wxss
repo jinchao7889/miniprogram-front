@@ -7,7 +7,7 @@
 
 .shuxian{
   position:relative;
-  left: 10rpx;
+  left: 5rpx;
   width: 3rpx;
   height: 100rpx;
   background: #fff;

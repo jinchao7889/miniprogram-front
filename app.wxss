@@ -1,6 +1,62 @@
 /**app.wxss**/
 @import "colorui/main.wxss";
 @import "colorui/icon.wxss";
+
+.tx {
+  width: 250rpx;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.Model {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+
+.Input-box {
+  position: absolute;
+  background-color: #f8f8f8;
+  padding: 30rpx;
+  padding-bottom: 130rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 101;
+  overflow: scroll	;
+}
+
+.tdTextarea {
+  background-color: #fff;
+  width: 100%;
+  padding: 5rpx;
+  height: 8em;
+  font-size: 15px;
+  position: static;
+}
+
+.Send {
+  font-size: 14px;
+  margin-top: 5rpx;
+  color: #09bb07;
+  float: right;
+  position: static;
+}
+
+.invisible_model {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+}
+
 .container {
   height: 100%;
   display: flex;
@@ -9,7 +65,7 @@
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-} 
+}
 
 .scrollPage {
   height: 100vh;
@@ -117,7 +173,12 @@
 }
 
 .tab {
-    position: absolute;
-z-index: 3;
-width: 100%;
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+}
+
+.canui-tabbar-bottom {
+  padding-bottom: 20rpx;
+  min-height: 150rpx;
 }

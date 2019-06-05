@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "rich-text":"/mycompent/richtext/richtext"
+  }
 }

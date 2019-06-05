@@ -1,0 +1,19 @@
+<view class='bg-white' style='margin-top:128rpx;'>
+
+  <view class='flex justify-center'>
+    <view class='fengmian flex flex-direction justify-center align-center margin-top-sm margin-bottom-sm'>
+      <text class="text-xl text-bold" style='margin-top:200rpx;'>恭喜您，终于写完了，赶紧发表吧！</text>
+      <view  style='margin-top:300rpx;width:100%;' class='flex justify-between'>
+        <button bindtap='saveall' class='bg-red text-white'>全部保存</button>
+        <button bindtap='publishall' class='bg-blue text-white'> 全部发表 </button>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<view class='next-write flex justify-start'>
+  <view class='margin-right-sm'>
+    <button class="cu-btn bg-green shadow" bindtap="stepslast">上一步</button>
+  </view>
+</view>

@@ -1,5 +1,15 @@
 /* pages/travels/details/details.wxss */
-@import "/wxParse/wxParse.wxss";
 image{
   width: 100%;
 }
+
+.box {  
+  margin: 20rpx 0; 
+}
+
+.box view.cu-bar {
+  margin-top: 20rpx; 
+   
+}
+
+

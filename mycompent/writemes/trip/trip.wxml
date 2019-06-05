@@ -1,0 +1,50 @@
+<view class='bg-white'style='margin-top:128rpx;'>
+
+  <view class='flex flex-direction  align-center'>
+    <image class='fengmian bg-gray radius margin-top-sm margin-bottom-sm' mode='aspectFill'  src='{{fileUrl}}'>  
+    </image>
+     <button class=' text-sm text-gray' bindtap='addimage'>添加/更改行程封面</button>
+  </view>
+
+
+
+
+  <view class="cu-list menu sm-border ">
+    <view class="cu-item" bindtap='gotoqianyan'>
+      <view class='content'>
+        <image src="/icon/hi.png" class="png" mode="aspectFit"></image>
+        <text class="text-black">前言</text>
+      </view>
+    </view>
+
+    <view class="cu-item " bindtap='gotoxincheng'>
+      <view class="content">
+        <image src="/icon/xincheng.png" class="png" mode="aspectFit"></image>
+        <text class="text-black">行程</text>
+      </view>
+    </view>
+
+    <view class="cu-item " bindtap='gotohuaxiao'>
+      <view class="content">
+        <image src="/icon/huaxiao.png" class="png" mode="aspectFill"></image>
+        <text class="text-black">花销</text>
+      </view>
+    </view>
+
+    <view class="cu-item " bindtap='gotoqindan'>
+      <view class="content">
+        <image src="/icon/qindan.png" class="png" mode="aspectFit"></image>
+        <text class="text-black">清单</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='next-write flex justify-between'>
+  <view class='margin-left-sm' >
+    <button  class="cu-btn bg-green shadow" bindtap="stepslast">上一步</button>
+  </view>
+  <view class='margin-right-sm' >
+    <button  class="cu-btn bg-green shadow" bindtap="stepsnext">下一步</button>
+  </view>
+</view>

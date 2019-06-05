@@ -1,0 +1,11 @@
+.orderformimg{
+  height: 140rpx;
+  width: 140rpx;
+}
+.orderformtx{
+  height:90rpx;
+  width:300rpx;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

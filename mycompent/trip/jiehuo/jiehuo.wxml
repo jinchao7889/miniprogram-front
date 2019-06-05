@@ -1,2 +1,67 @@
-<!--mycompent/trip/jiehuo/jiehuo.wxml-->
-<text>mycompent/trip/jiehuo/jiehuo.wxml</text>
+<view class='fixed cu-bar' style="top:{{CustomBar-4}}px;">
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{2}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      {{tableData[index]}}
+    </view>
+  </view>
+</scroll-view>
+</view>
+
+
+<view style='margin-top:45px'></view>
+
+
+<block wx:for='{{jiehuocontent}}' wx:key='{{item.questionUserId}}' wx:if='{{TabCur==0}}'>
+
+  <view class="cu-card dynamic isCard" bindtap='godetailquestion' data-id='{{item.id}}'>
+    <view class="cu-item shadow">
+      <view class="cu-list menu-avatar">
+        <view class="cu-item">
+          <view class="cu-avatar round lg" style="background-image:url({{item.userHead}});"></view>
+          <view class="content flex-sub">
+            <text class='tx'>{{item.userNickname}}</text>
+            <view class="text-gray text-sm flex justify-between">
+              {{item.createTime}}
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="text-content" style='margin-bottom:0px'>
+        {{item.question}}
+      </view>
+      <view class="text-gray text-sm text-right padding flex justify-end">
+        <text class="icon-messagefill margin-lr-xs"></text>{{item.replyNumber}}
+      </view>
+    </view>
+  </view>
+
+</block>
+
+
+
+<block wx:for='{{myjiehuocontent}}' wx:key='{{item.questionUserId}}' wx:if='{{TabCur==1}}'>
+
+  <view class="cu-card dynamic isCard" bindtap='godetailquestion' data-id='{{item.id}}'>
+    <view class="cu-item shadow">
+      <view class="cu-list menu-avatar">
+        <view class="cu-item">
+          <view class="cu-avatar round lg" style="background-image:url({{item.userHead}});"></view>
+          <view class="content flex-sub">
+            <text class='tx'>{{item.userNickname}}</text>
+            <view class="text-gray text-sm flex justify-between">
+              {{item.createTime}}
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="text-content" style='margin-bottom:0px'>
+        {{item.question}}
+      </view>
+      <view class="text-gray text-sm text-right padding flex justify-end">
+        <text class="icon-messagefill margin-lr-xs"></text>{{item.replyNumber}}
+      </view>
+    </view>
+  </view>
+
+</block>

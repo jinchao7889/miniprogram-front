@@ -12,6 +12,8 @@
       <slot name="content"></slot>
       
     </view>
+
+    
     <slot name="right"></slot>
   </view>
 </view>

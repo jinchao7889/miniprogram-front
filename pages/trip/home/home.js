@@ -1,5 +1,6 @@
 // pages/trip/home/home.js
 const app = getApp();
+const wxRequest = require('../../../utils/promise-util.js');
 
 Page({
 
@@ -11,6 +12,19 @@ Page({
     TabCur: 0,
     scrollLeft: 0,
     tableData: ['综合', '天数', '最新', '人气'],
+    tripcontent:[],
+    menuTop:Number,
+    menuFixed:false,
+    pages: 0,
+    nowpages: 0,
+    temp: 1,
+    isLoad: false,
+
+
+
+
+
+
     swiperList: [{
       id: 0,
       type: 'image',
@@ -42,17 +56,64 @@ Page({
     }]
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  
+
   onLoad: function (options) {
+    this.loadtripcontent(0)
 
   },
+
+  initClientRect:function () {
+    var that = this;
+    var query = wx.createSelectorQuery()
+    query.select('#affix').boundingClientRect()
+    query.exec(function (res) {
+      that.setData({
+        menuTop: res[0]
+      })
+    })
+  },
+
+  loadtripcontent(i){
+    var data={
+      "page": i,
+      "size": 10
+    }
+    var that=this
+    wxRequest.postRequest(app.globalData.get_trip_content, data).then(res => {
+      console.log(res)
+      var list = that.data.tripcontent
+      that.setData({
+        tripcontent: list.concat(res.dataList)
+      })
+      that.data.pages = res.pages
+      that.data.nowpages = res.nowpages
+    });
+
+  },
+
   tabSelect(e) {
     this.setData({
       TabCur: e.currentTarget.dataset.id,
       scrollLeft: (e.currentTarget.dataset.id - 1) * 60
     })
-  }
+  },
+
+
+  onReachBottom: function () {
+    if (this.data.nowpages < this.data.pages) {
+      this.loadtripcontent(this.data.temp);
+      this.data.temp = this.data.temp + 1;
+    } else {
+      // wx.showToast({
+      //   title: '没有更多了！',
+      //   icon: 'none'
+      // })
+      this.setData({
+        isLoad: true
+      })
+      this.data.temp = 1;
+    }
+  },
 
 })

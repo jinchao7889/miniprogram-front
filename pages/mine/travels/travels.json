@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "travelmine-cmp": "/mycompent/travels/trabelsmine/travels-mine"
+  },
+  "onReachBottomDistance": 50
 }

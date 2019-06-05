@@ -1,0 +1,104 @@
+<!--components/xing-editor.wxml-->
+<view   class='margin-top' style='height:90vh;'   >
+
+<view  class='caozuo text-center shadow text-brown'>
+ <text class=" icon-back_android  margin-top" style='font-size:70rpx' data-index="1" catchtap="backpage"></text><view class='text-xs'>返回</view>
+
+ <text class=" icon-text  margin-top" style='font-size:70rpx' data-index="1" catchtap="addTitle"></text><view class='text-xs'>标题</view>
+  <text class=" icon-text  margin-top" style='font-size:70rpx' data-index="1" catchtap="addText" data-flag='2'></text><view class='text-xs'>文本</view>
+
+  <text class=" icon-cameraadd margin-top"style='font-size:70rpx' data-index="1" catchtap="addImage"></text><view class='text-xs'>图片</view>
+  <text class=" icon-video margin-top"style='font-size:70rpx' data-index="1" catchtap="addVideo"></text><view class='text-xs'>视频</view>
+      <text class=" icon-upload margin-top"style='font-size:70rpx' data-index="1" catchtap="onFinish"></text><view class='text-xs'>保存</view>
+
+</view>
+<view   style='min-height:85vh;padding-bottom:200px; width:90%;margin-left:10%' bindtap='addText' data-flag='1'>
+<view  class="editor-wrapper"  catchtap="famhzhimaopao">
+  <block wx:for="{{nodeList}}" wx:for-item="node" wx:for-index="index" wx:key="{{index}}">
+
+    <view class="editor-node-wrapper  "  >
+
+      <view wx:if="{{node.name === 'p'}}" class="flex justify-between align-end" catchtap='textCatChaa'>
+      <view style='width:100%' >
+        <textarea class=" text-xl editor-textarea margin-top-sm {{index==attackIndex?'solids':''}}"   value="{{node.children[0].text}}"  cursor-spacing='10' data-index="{{index}}" bindinput="onTextareaInput" bindfocus="catchText" focus='false' cursor-spacing='50'  placeholder='请输入正文'    auto-height='true' bindconfirm="textconfirm" maxlength="-1" >
+        </textarea>
+        </view>
+        <view class='' wx:if="{{(node.name === 'p'||node.name === 'h')&&node.children[0].text==''}}">
+          <view class='icon-delete text-black lg'style='font-size:50rpx'  data-index="{{index}}" catchtap="deleteNode"></view>
+        </view>
+      </view>
+ <view wx:if="{{node.name === 'h'}}" class="flex justify-between align-end " catchtap='textCatChaa'>
+        <view style='width:100%'>
+        <textarea class="text-bold text-xxl editor-textarea  margin-top-sm {{index==attackIndex?'solids':''}}"   value="{{node.children[0].text}}" auto-height='true'  cursor-spacing='10' maxlength="-1" data-index="{{index}}" bindinput="onTextareaInput" cursor-spacing='50'  bindfocus="catchText"   placeholder='请输入段落' bindconfirm="textconfirm" focus='false' style='height:25px'>
+        </textarea>
+        </view>
+        <view class='' wx:if="{{(node.name === 'p'||node.name === 'h')&&node.children[0].text==''}}">
+          <view class='icon-delete text-black lg'style='font-size:50rpx'  data-index="{{index}}" catchtap="deleteNode"></view>
+        </view>
+      </view>
+      <!-- <block wx:if="{{node.name === 'audio'}}">
+      <view class='editor-audio'>
+        <image src='{{node.attrs.src}}' mode='aspectFit' bind:touchstart="startAudio" bind:touchend="stopAudio" data-index="{{index}}" wx:if='{{!node.attrs._uploaded}}'></image>
+        <button bindtap="playAudio" data-index="{{index}}" wx:else>录音完成，点击播放</button>
+      </view>
+    </block> -->
+
+      <view   wx:if="{{node.name === 'img'}}">
+
+<view class="cu-card case editor-image margin-top-sm  " style='width:100%'>
+  <view class="cu-item shadow bg-blue {{index==attackIndex?'solids':''}}" style='margin:5px'>
+    <view class="image " >
+      <image src="{{node.attrs.src}}"style='display:block;'   mode="aspectFill" data-index="{{index}}"  catchtap="catchtapImage" data-url="{{node.attrs.src}}" ></image>
+      <view class="cu-bar bg flex justify-end "  style='top:0px;bottom:initial;width:initial;right:0px;padding:0px' >
+        <view class=' flex align-center  margin-left  margin-right' >
+         <view class="icon-attention  text-white "  catchtap="previewImg"  data-url="{{node.attrs.src}}" style='font-size:22px'></view>
+          <!-- <view class="icon-edit  text-white margin-left margin-right"  style='font-size:22px'></view> -->
+          <view class="icon-delete  text-white   margin-left"  catchtap="deleteNode"  data-index="{{index}}" style='font-size:22px'></view>
+        </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+    
+
+      <view wx:if="{{node.name === 'video'}}" class='image'>
+        <video src="{{node.attrs.src}}" controls style="height: {{node.attrs._height * 700}}rpx; width: 100%"></video>
+          <view class="flex justify-end "   >
+          <!-- <view class="icon-edit  text-white margin-left margin-right"  style='font-size:22px'></view> -->
+          <view class="icon-delete  text-black   margin-left"  catchtap="deleteNode"  data-index="{{index}}" style='font-size:22px'></view>
+        </view>
+      </view>
+
+      <!-- <block wx:if="{{node.name === 'imgs'}}">
+      <view class='editor-images'>
+        <block wx:for='{{node.attrs.src}}' wx:key='iindex' wx:for-index='iindex'>
+          <image src="{{item}}" mode='aspectFill' catchtap='previewImg' data-index='{{index}}' data-url='{{item}}'></image>
+        </block>
+        <image class="editor-images-add" src="../img/add.png" bindtap="addImages" data-index="{{index}}"></image>
+      </view>
+    </block> -->
+
+  </view>
+
+
+   
+
+  </block>
+</view>
+
+
+</view>
+</view>
+
+<view class="editor-add-wrapper  padding "   style='width:100%'>
+  <!-- <view class="editor-add iconfont icon-align-left" data-index="1" bindtap="addText"></view>
+  <view class="editor-add iconfont icon-images" data-index="1" bindtap="addImages"></view>
+  <view class="editor-add iconfont icon-audio" data-index="1" catchtap="addAudio"></view> -->
+  
+</view>
+
+<!-- <button class="editor-submit-btn" style="background-color: {{buttonBackgroundColor}}; color: {{buttonTextColor}}" bindtap="onFinish">完成
+</button> -->

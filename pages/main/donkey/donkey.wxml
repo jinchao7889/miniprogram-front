@@ -1,6 +1,8 @@
-<cu-custom  bgColor="bg-blue" isBack="{{true}}">
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
   <view slot="content">驴行</view>
 </cu-custom>
+
+
 
 <scroll-view scroll-x class="bg-white nav">
   <view class="flex text-center">
@@ -10,4 +12,18 @@
   </view>
 </scroll-view>
 
-<donkey></donkey>
+
+<block wx:for='{{mes}}' wx:key='key' wx:if='{{TabCur==0}}'>
+  <donkey bindtap='gotodonkeydetail' title='{{item.title}}' starttime='{{item.startActivity}}' peoplenum='{{item.maxPeopleNumber}}' price='{{item.price}}' collectionplace='{{item.collectionPlace}}' covermap='{{item.coverMap}}' data-index='{{index}}'></donkey>
+</block>
+
+
+
+<block wx:for='{{mymes}}' wx:key='key' wx:if='{{TabCur==1}}'>
+  <donkey-mine bindtap='gotoactivitysignupdetail' title='{{item.title}}' starttime='{{item.startActivity}}' peoplenum='{{item.maxPeopleNumber}}' collectionplace='{{item.collectionPlace}}' covermap='{{item.coverMap}}' data-index='{{index}}' createTime='{{item.createTime}}'
+  />
+</block>
+
+
+
+<view class="cu-load text-black {{!isLoad?'':'over'}}"></view>

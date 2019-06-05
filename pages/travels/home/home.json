@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "travels-cmp":"/mycompent/travels/travelsmain/travels-main"
+  }
+}

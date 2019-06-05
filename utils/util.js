@@ -14,6 +14,59 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+function timestampsTurnFuc(timestr) {
+  var timestamp = Date.parse(new Date(timestr));
+  timestamp = timestamp / 1000;
+  return timestamp
+}
+
+
+
+function tsFormatTime(timestamp, format) {
+
+  const formateArr = ['Y', 'M', 'D', 'h', 'm', 's'];
+  let returnArr = [];
+
+  let date = new Date(timestamp * 1000);
+  let year = date.getFullYear()
+  let month = date.getMonth() + 1
+  let day = date.getDate()
+  let hour = date.getHours()
+  let minute = date.getMinutes()
+  let second = date.getSeconds()
+  returnArr.push(year, month, day, hour, minute, second);
+  returnArr = returnArr.map(formatNumber);
+
+  for (var i in returnArr) {
+    format = format.replace(formateArr[i], returnArr[i]);
+  }
+  return format;
+
+}
+
+function tsFormatDateTime(date, format) {
+
+  const formateArr = ['Y', 'M', 'D', 'h', 'm', 's'];
+  let returnArr = [];
+
+  let year = date.getFullYear()
+  let month = date.getMonth() + 1
+  let day = date.getDate()
+  let hour = date.getHours()
+  let minute = date.getMinutes()
+  let second = date.getSeconds()
+  returnArr.push(year, month, day, hour, minute, second);
+  returnArr = returnArr.map(formatNumber);
+
+  for (var i in returnArr) {
+    format = format.replace(formateArr[i], returnArr[i]);
+  }
+  return format;
+
+}
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  tsFormatTime: tsFormatTime,
+  timestampsTurnFuc: timestampsTurnFuc,
+tsFormatDateTime: tsFormatDateTime
 }

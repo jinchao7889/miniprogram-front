@@ -1,0 +1,9 @@
+.fengmian{
+  width: 80%;
+  height:300rpx; 
+}
+.next-write{
+  position: fixed;
+  bottom: 20rpx;
+  width: 100%;
+}

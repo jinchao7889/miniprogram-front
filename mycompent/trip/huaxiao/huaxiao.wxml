@@ -1,2 +1,22 @@
-<!--mycompent/trip/huaxiao/huaxiao.wxml-->
-<text>mycompent/trip/huaxiao/huaxiao.wxml</text>
+<view class=" text-center bg-white">
+  <view class="padding radius shadow  text-black">总金额(CNY):2365</view>
+</view>
+
+<block wx:for='{{huaxiaocontent}}' wx:key='{{item.id}}'>
+  <view class="padding text-center ">
+    <view class="padding radius shadow  bg-white  flex justify-between" bindtap='isshowsechuaxiao' data-index='{{index}}'>
+      <text>{{item.tripTime}}:  CNY  {{item.totalMoney}}</text>
+      <text class="icon-unfold lg text-gray"></text>
+    </view>
+  </view>
+
+  <view class='padding-left-xl padding-right-xl' wx:if="{{listExpan[index]}}">
+    <block wx:for='{{item.expensesDetail}}' wx:for-item='j' wx:for-index='j-index' wx:key='{{j.entry}}'>
+      <view class='flex  justify-between '>
+        <view class=''>{{j.entry}}</view>
+        <view class=''>{{j.expenses}}元</view>
+      </view>
+    </block>
+  </view>
+
+</block>

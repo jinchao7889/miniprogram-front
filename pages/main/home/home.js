@@ -1,11 +1,21 @@
-var app=getApp();
+const wxRequest = require('../../../utils/promise-util.js');
+var app = getApp();
+var a = 1;
+var pages = 0;
+var nowPage = 0;
 
 Page({
   options: {
-    addGlobalClass: true,
+    addGlobalClass: false,
   },
   data: {
+    isLoad: false,
     cardCur: 0,
+    hometravels: [],
+    tableData: ['综合', '天数', '最新', '人气'],
+    CustomBar: app.globalData.CustomBar,
+    TabCur: 0,
+    menuTop: Number,
     swiperList: [{
       id: 0,
       type: 'image',
@@ -13,34 +23,92 @@ Page({
     }, {
       id: 1,
       type: 'image',
-        url: 'http://ldlj.shengjinglvyou01.top/bd/54/n/images/image005.jpg',
+      url: 'http://ldlj.shengjinglvyou01.top/bd/54/n/images/image005.jpg',
     }, {
       id: 2,
       type: 'image',
-        url: 'http://ldlj.shengjinglvyou01.top/bd/54/n/images/image012.jpg'
+      url: 'http://ldlj.shengjinglvyou01.top/bd/54/n/images/image012.jpg'
     }, {
       id: 3,
       type: 'image',
-        url: 'http://ldlj.shengjinglvyou01.top/bd/54/n/images/image014.jpg'
+      url: 'http://ldlj.shengjinglvyou01.top/bd/54/n/images/image014.jpg'
     }, {
       id: 4,
       type: 'image',
-        url: 'http://ldlj.shengjinglvyou01.top/bd/54/n/images/image021.jpg'
+      url: 'http://ldlj.shengjinglvyou01.top/bd/54/n/images/image021.jpg'
     }, {
       id: 5,
       type: 'image',
-        url: 'http://ldlj.shengjinglvyou01.top/bd/54/n/images/image024.jpg'
+      url: 'http://ldlj.shengjinglvyou01.top/bd/54/n/images/image024.jpg'
     }, {
       id: 6,
       type: 'image',
-        url: 'http://ldlj.shengjinglvyou01.top/bd/54/n/images/image020.jpg'
+      url: 'http://ldlj.shengjinglvyou01.top/bd/54/n/images/image020.jpg'
     }],
     ColorList: app.globalData.ColorList,
   },
+  tabSelect(e) {
+    this.setData({
+      TabCur: e.currentTarget.dataset.id,
+      scrollLeft: (e.currentTarget.dataset.id - 1) * 60
+    })
+  },
+  initClientRect: function() {
+    var that = this;
+    var query = wx.createSelectorQuery()
+    query.select('#bffix').boundingClientRect()
+    query.exec(function(res) {
+      that.setData({
+        menuTop: res[0]
+      })
+    })
+  },
+
+
   onLoad() {
     this.towerSwiper('swiperList');
     // 初始化towerSwiper 传已有的数组名即可
+
+    this.loadTravelPages(0);
+
   },
+
+  gotop: function(e) { // 一键回到顶部
+    if (wx.pageScrollTo) {
+      wx.pageScrollTo({
+        scrollTop: 0
+      })
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试.'
+      })
+    }
+  },
+
+
+
+  loadTravelPages(i) {
+    var data = {
+      "page": i,
+      "size": 8,
+      "status": 2
+    }
+
+    var that = this
+
+    wxRequest.postRequest(app.globalData.travel_div_pages, data).then(res => {
+      console.log(res)
+      var list = that.data.hometravels
+      that.setData({
+        hometravels: list.concat(res.dataList)
+      })
+      pages = res.pages
+      nowPage = res.nowPage
+    });
+  },
+
+
   DotStyle(e) {
     this.setData({
       DotStyle: e.detail.value
@@ -106,10 +174,43 @@ Page({
       })
     }
   },
-   onclickShop(e){
-    console.log('allala')
+
+  gototriphome() {
     wx.navigateTo({
-      url: '/page/main/shop/shop',
+      url: '/pages/trip/home/home'
     })
-  }
+  },
+
+  onReachBottom() {
+
+    if (nowPage < pages) {
+      this.loadTravelPages(a);
+      a = a + 1;
+    } else {
+      this.setData({
+        isLoad: true
+      })
+      a = 1;
+    }
+
+  },
+
+  onPageScroll: function(e) {
+    //console.log(e)
+    if (e.scrollTop > 100) {
+      this.setData({
+        floorstatus: true
+      });
+    } else {
+      this.setData({
+        floorstatus: false
+      });
+    }
+  },
+
+
+
+  
+
+
 })

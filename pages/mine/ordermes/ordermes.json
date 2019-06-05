@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "orderform-cmp": "/mycompent/orderform/orderform",
+    "orderform-donkey-cmp": "/mycompent/orderform-donkey/orderform"
+  },
+  "onReachBottomDistance": 50
+}

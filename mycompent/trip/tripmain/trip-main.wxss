@@ -1,1 +1,5 @@
 @import "../trip.wxss";
+.img{
+  height: 400rpx;
+  width: 100%;
+}

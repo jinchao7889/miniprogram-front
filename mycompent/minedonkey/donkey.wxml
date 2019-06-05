@@ -1,0 +1,35 @@
+<view class="cu-card case  ">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image src="{{covermap}}" mode="aspectFill"></image>
+      <!-- <view class="cu-tag bg-blue">最新</view> -->
+
+    </view>
+    <view class='padding-sm'>
+      <view class=" text-xl ">
+        <text class="text-black text-bold">{{title}}</text>
+      </view>
+
+      <view class=" text-df margin-top-xs">
+        <text class="text-red ">出发时间:</text>
+        <text class="text-black text-bold margin-left-sm ">{{starttime}}</text>
+      </view>
+
+      <view class=" text-df margin-top-xs">
+        <text class="text-black ">人数:</text>
+        <text class="text-black text-bold margin-left-sm ">{{peoplenum}}人</text>
+      </view>
+
+      <view class=" text-df margin-top-xs">
+        <text class=" text-black">集合出发地:</text>
+        <text class="text-black text-bold margin-left-sm ">{{collectionplace}}</text>
+      </view>
+
+       <view class=" text-df margin-top-xs">
+        <text class="text-black ">报名时间:</text>
+        <text class="text-black text-bold margin-left-sm ">{{createTime}}</text>
+      </view>
+
+    </view>
+  </view>
+</view>

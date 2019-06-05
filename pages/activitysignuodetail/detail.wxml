@@ -1,0 +1,50 @@
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
+  <view slot="content">报名详情</view>
+</cu-custom>
+
+  <form>
+
+    <view class="flex justify-center align-center bg-white padding-top-xl">
+      <image src='/icon/pencil.png' style='width:60rpx;height:60rpx;' class=' margin-right-sm'></image>
+      <text class='text-xl text-bold'>个人参与信息</text>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">姓名</view>
+      <text class='text-bold text-black text-lg'>{{realName}}</text>
+    </view>
+
+
+    <view class="cu-form-group">
+      <view class="title">性别</view>
+     <text class='text-bold text-black text-lg'>{{gender}}</text>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">身份证</view>
+     <text class='text-bold text-black text-lg'>{{contactId}}</text>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">电话</view>
+      <text class='text-bold text-black text-lg'>{{contactNumber}}</text>
+    </view>
+
+
+    <view class="cu-form-group">
+      <view class="title">QQ</view>
+      <text class='text-bold text-black text-lg'>{{qqNumber}}</text>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">微信</view>
+      <text class='text-bold text-black text-lg'>{{wxNumber}}</text>
+    </view>
+
+  </form>
+
+
+<view class='btn flex justify-center' style='width:100%;'>
+<button class=' bg-red text-white'>查看订单</button>
+</view> 
+

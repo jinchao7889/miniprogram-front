@@ -1,0 +1,89 @@
+<cu-custom  bgColor="bg-blue" isBack="{{true}}">
+  <view slot="content">个人认证</view>
+</cu-custom>
+
+<view class="bg-white padding solid-bottom" wx:if='{{auditStatus!=2}}'>
+  <view class="cu-steps">
+    <view class="cu-item {{index>num?'':auditStatus==3&&index==2?'text-red': 'text-blue' }}" wx:for="{{numList}}" wx:key>
+      <text class="num {{auditStatus==3&&index==2?'err':''}}" data-index="{{index + 1}}"></text> {{item.name}}
+    </view>
+  </view>
+</view>
+
+
+<view class="cu-bar bg-white solid-bottom ">
+ <view class="action" wx:if='{{auditStatus==0}}'>
+    <text class="icon-title text-orange"></text> 填写信息
+  </view>
+  <view class="action" wx:elif='{{auditStatus==1}}'>
+    <text class="icon-title text-orange"></text> 可修改信息
+  </view>
+  <view class="action" wx:elif='{{auditStatus==2}}'>
+    <text class="icon-title text-green"></text> 认证成功！
+  </view>
+   <view class="action" wx:elif='{{auditStatus==3}}'>
+    <text class="icon-title text-red"></text> 请重新修改信息
+  </view>
+</view>
+<form bindsubmit="formSubmit">
+<view class="cu-form-group ">
+		<view class="title">姓名</view>
+		<input placeholder="请输入您的全名" name="realname" value='{{realname}}' disabled='{{auditStatus==2}}' ></input>
+	</view>
+
+  <view class="cu-form-group ">
+		<view class="title">手机号码</view>
+		<input  name="phone" value="{{phone}}" placeholder="请输入11位手机号" disabled='{{auditStatus==2}}'></input>
+		<button class="cu-btn bg-green shadow" wx:if='{{auditStatus!=2}}'>发送验证码</button>
+	</view>
+   <view class="cu-form-group " wx:if='{{auditStatus!=2}}'>
+		<view class="title">短信验证码</view>
+		<input placeholder="请输入短信验证码" name="smsCode" value='{{smsCode}}'></input>
+	</view>
+  
+	<view class="cu-bar bg-white solid-top">
+		<view class="action " style='color:#000;'>
+			身份照片
+		</view>
+	</view>
+  <view class="cu-form-group">
+    <view class="grid col-3 grid-square flex-sub">
+    
+      <view class="padding-xs solids text-center" bindtap="ChooseImage" data-index='0' wx:if="{{imgList[0]==null}}">
+        <text class="icon-cameraadd"></text> <text class='text-grey'>身份证正面照</text> 
+      </view>
+        <view class="padding-xs bg-img" style="background-image:url({{imgList[0]}})" wx:else data-index='{{index}}' bindtap="ViewImage" data-url="{{imgList[index]}}">
+        <view class="cu-tag bg-red" catchtap="DelImg" data-index="0"  wx:if='{{auditStatus!=2}}'>
+          <text class="icon-close"></text>
+        </view>
+      </view>
+
+
+      <view class="padding-xs solids text-center" bindtap="ChooseImage" data-index='1' wx:if="{{imgList[1]==null}}">
+        <text class="icon-cameraadd"></text><text class='text-grey'>身份证反面照</text> 
+      </view>
+  <view class="padding-xs bg-img"  style="background-image:url({{imgList[1]}})" wx:else data-index='{{index}}' bindtap="ViewImage"  data-url="{{imgList[index]}}">
+        <view class="cu-tag bg-red" catchtap="DelImg" data-index="1" wx:if='{{auditStatus!=2}}'>
+          <text class="icon-close" ></text>
+        </view>
+      </view>
+
+      <view class="padding-xs solids text-center" bindtap="ChooseImage" data-index='2' wx:if="{{imgList[2]==null}}">
+        <text class="icon-cameraadd"></text><text class='text-grey'>学生证照</text> 
+      </view>
+
+        <view class="padding-xs bg-img" style="background-image:url({{imgList[2]}})" wx:else data-index='{{index}}' bindtap="ViewImage" data-url="{{imgList[index]}}">
+        <view class="cu-tag bg-red" catchtap="DelImg" data-index="2"  wx:if='{{auditStatus!=2}}'>
+          <text class="icon-close"></text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class='padding-xl' wx:if='{{auditStatus!=2}}'>
+    <button class="cu-btn block line-blue margin-tb-sm lg shadow" form-type='submit'>
+    <!-- <text class="icon-loading2 iconfont-spin"></text> 加载</button> -->
+        <text class="icon-upload "></text> 上传</button>
+  </view>
+</form>

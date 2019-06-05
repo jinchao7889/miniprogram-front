@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "donkey":"/mycompent/donkey/donkey"
-  }
+    "donkey":"/mycompent/donkey/donkey",
+    "donkey-mine": "/mycompent/minedonkey/donkey"
+  },
+  "onReachBottomDistance": 50
 }

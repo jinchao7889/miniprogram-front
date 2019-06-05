@@ -1,17 +1,17 @@
 <!--pages/trip/home/home.wxml-->
 
 
-<cu-custom  bgColor="bg-blue" isBack="{{true}}">
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
   <view slot="content">行程主页</view>
 </cu-custom>
 
 
-  <swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
-    <swiper-item wx:for="{{swiperList}}" wx:key>
-      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
-      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
-    </swiper-item>
-  </swiper>
+<swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{swiperList}}" wx:key>
+    <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+    <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+  </swiper-item>
+</swiper>
 
 <view class="cu-bar bg-white  solid-bottom">
   <view class='action'>
@@ -19,17 +19,20 @@
   </view>
 </view>
 
-<scroll-view scroll-x class="bg-white nav">
-  <view class="flex text-center">
-    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{tableData}}" wx:key bindtap="tabSelect" data-id="{{index}}">
-      {{item}}
+<view class="stickyClass" style='top:{{CustomBar}}px' id="affix">
+  <scroll-view scroll-x class="bg-white nav ">
+    <view class="flex text-center">
+      <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{tableData}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+        {{item}}
+      </view>
     </view>
-  </view>
-</scroll-view>
-<navigator hover-class='none' url='/pages/trip/detailed/detailed'>
-<trip-main title="西西里"></trip-main>
+  </scroll-view>
+</view>
 
-</navigator>
-<trip-main title="西藏"></trip-main>
-<trip-main title="西藏"></trip-main>
-<trip-main title="西藏"></trip-main>
+<block wx:for='{{tripcontent}}' wx:key='tripId'>
+  <navigator hover-class='none' url='/pages/trip/detailed/detailed?tid={{item.travelsId}}'>
+    <trip-main tripcontent='{{item}}' />
+  </navigator>
+</block>
+
+<view class="cu-load text-black {{!isLoad?'loading':'over'}}"></view>

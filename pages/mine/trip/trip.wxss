@@ -23,4 +23,15 @@
 z-index: -1;
 }
 
+.co-write{
+  position: fixed;
+  bottom: 50rpx;
+  width: 100%;
+  z-index: 99;
+}
+.write-img{
+  width: 50rpx;
+  height: 50rpx;
+}
+
 

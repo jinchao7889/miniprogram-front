@@ -1,0 +1,28 @@
+
+<cu-custom  bgColor="bg-blue" isBack="{{true}}">
+  <view slot="content">我的地址</view>
+</cu-custom>
+
+<view class="address-container">
+<view wx:if="{{addressList.length==0}}" class='text-center padding bg-white'>
+还没有地址哦,赶快新增吧!
+</view>
+    <view class="address-list"  wx:else>
+        <view class="a-address"  wx:for-items="{{addressList}}" wx:key="{{index}}">
+             <view class="left-text {{item.addressDefault? 'active':''}}" bindtap="selectTap" data-id="{{item.id}}" data-index="{{index}}">
+                 <view class="name-tel">
+                    {{item.contacts}}  {{item.phone}}
+                 </view>
+                 <view class="address-box">
+                    {{item.approximatelyAddress + item.detailedAddress}}
+                 </view>     
+             </view>   
+             <view class=" icon-edit margin-right" style='font-size:45rpx' bindtap="editAddess"
+              data-id="{{item.id}}" data-approximatelyaddress="{{item.approximatelyAddress}}" data-detailedaddress="{{item.detailedAddress}}" data-contacts="{{item.contacts}}" data-phone="{{item.phone}}" data-addressdefault="{{item.addressDefault}}"></view> 
+        </view>
+    </view>
+    <view class="bottom-box">
+        <view class="add-btn" bindtap="addAddess">新增收货地址</view>
+    </view>
+
+</view>

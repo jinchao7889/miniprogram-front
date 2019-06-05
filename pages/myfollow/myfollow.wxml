@@ -1,0 +1,31 @@
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
+  <view slot="content">我的关注</view>
+</cu-custom>
+
+<view class='flex justify-center text-xl text-bold align-center margin-top-xl'>
+  您共关注了
+  <text class='text-red text-bold margin-left-sm margin-right-sm'>{{num}}</text>位驴友
+</view>
+
+<view class='flex flex-direction align-center margin-top-xl'>
+
+  <block wx:for='{{userinfo}}' wx:key>
+
+    <view style='width:92%;border-bottom: 4rpx solid white;;' class='flex align-center padding-top-sm padding-bottom-sm ' bindlongtap='cancelfollow' data-index='{{index}}'>
+      <view class="cu-avatar lg round margin-left" style="background-image:url({{item.portraitUrl}});"></view>
+      <view class='margin-left-sm'>
+        <text class=' text-lg tx' style='width:350rpx;'>{{item.nickname}}</text>
+        <view class='margin-top-sm'>
+          <text class="icon-title text-blue"></text>
+          <text class='text-df text-gray'>足迹</text>
+        </view>
+      </view>
+    </view>
+
+  </block>
+
+
+
+
+
+</view>

@@ -1,0 +1,36 @@
+<view class="cu-list menu-avatar comment ">
+  <view class="cu-item" style='padding-bottom:0px'>
+    <image class="cu-avatar round " src='{{answerhead}}'></image>
+    <view class="content">
+      <text class="text-gray tx">{{answernickname}}</text>
+      <view class=" text-black text-content text-df">
+        {{content}}
+      </view>
+
+
+      <view wx:if='{{replyNumber!=0}}' class="bg-color padding-xs radius margin-top-sm">
+        <view class="flex ">
+          <view class="flex-sub  ">
+            <block wx:for='{{comment_secComments}}' wx:key='item.answerUserId'>
+              <view>
+                <text class='text-grey text-df tx'>{{item.answerNickname}}</text>{{item.content}}
+              </view>
+            </block>
+          </view>
+        </view>
+
+        <view>
+          <navigator class="content" hover-class="none" url="/pages/comment/lvingmes-detail/detail?pid={{parentid}}&&aid={{activityid}}">
+            <text class='text-blue text-df'>{{replyNumber==0?'':'共'+replyNumber+'条回复'}}</text>
+          </navigator>
+        </view>
+      </view>
+
+      <view class="flex justify-between align-center">
+        <view class="text-gray text-sm">{{creattime}}</view>
+        <image bindtap='goreply' class='img' src='/icon/comment.png' />
+      </view>
+
+    </view>
+  </view>
+</view>

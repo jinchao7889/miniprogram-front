@@ -1,0 +1,22 @@
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
+  <view slot="content">我的草稿</view>
+</cu-custom>
+
+
+<view class='bg-white' >
+
+  <block wx:for='{{travelmes}}' wx:key='{{item.travelsId}}'>
+    <view class='flex flex-direction align-center' bindtap='goeditcaogao' bindlongpress="deletecaogao" data-index='{{index}}'>
+      <image class='fengmian bg-gray radius margin-top-sm margin-bottom-sm' src='{{item.coverMap}}'>
+      </image>
+      <view class='solids-bottom flex justify-start margin-bottom-xl align-center ' style='width:90%;'>
+        <text class='text-gray text-df '>继续：</text>
+        <text class='text-xl text-bold text-black margin-left-sm margin-bottom-sm'>{{item.title?item.title:'未命名草稿'}}</text>
+      </view>
+    </view>
+  </block>
+
+
+</view>
+
+<view class="cu-load text-black {{!isLoad?'':'over'}}"></view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-stepper": "/dist/vant/stepper/index",
+    "van-submit-bar": "/dist/vant/submit-bar/index"
+  
+  }
+}

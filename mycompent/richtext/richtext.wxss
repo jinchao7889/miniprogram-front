@@ -1,0 +1,2 @@
+/* mycompent/richtext/richtext.wxss */
+@import "/wxParse/wxParse.wxss";

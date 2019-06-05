@@ -1,0 +1,63 @@
+<writenavbar-cmp bgColor="bg-blue" isBack="{{true}}" bindsavecontent='savecontent' bindbackpage='backpage'>
+  <view slot="content">编辑行程</view>
+</writenavbar-cmp>
+
+<view class='bg-white'>
+
+  <block wx:for="{{tripSummize}}" wx:key>
+
+    <view class='flex justify-center align-center'>
+
+
+      <view class='xinchenginputbox  solid radius shadow flex justify-between align-center margin-top-xl margin-bottom-sm'>
+
+        <view class='margin-left-sm'>
+          <input class='ipttime text-lg text-black' placeholder='D.1' placeholder-class='text-xl text-grey text-bold' bindblur='gettime' data-index='{{index}}' value='{{item.tripTime}}'></input>
+        </view>
+
+        <view class='margin-right-xl'>
+          <input class='iptplace' placeholder='输入当天的历程' placeholder-class='text-xl text-gray text-bold' bindblur='getdaycontent' data-index='{{index}}' value='{{item.content}}'></input>
+        </view>
+
+        <view class='padding-sm' bindtap='isfold' data-index='{{index}}'>
+          <text class="{{isfold[index]?'icon-unfold':'icon-right'}} lg text-black"></text>
+        </view>
+
+      </view>
+
+
+    </view>
+
+    <view class='flex flex-direction align-center' wx:if='{{isfold[index]}}'>
+      <!-- <input class='text-center text-lg' placeholder='出发地' placeholder-class='text-gray' bindblur='getstartplace' data-index='{{index}}' data-indexa='{{0}}'></input> -->
+
+      <block wx:for='{{item.tripDetail}}' wx:for-index='a' wx:for-item='itema' wx:key='key'>
+        <image style='width:50rpx;height:50rpx;' src='/icon/down.png'></image>
+        <input class='text-center text-lg' placeholder='地点' placeholder-class='text-gray' bindblur='getplace' data-indexa='{{a}}' data-index='{{index}}' value='{{itema.content}}'></input>
+      </block>
+
+      <view class='margin-top-sm flex justify-center' >
+        <image bindtap='addplace' data-indexa='{{a}}' data-index='{{index}}' style='width:60rpx;height:60rpx;' class='margin-right-lg' src='/icon/add.png'></image>
+        <image bindtap='popplace' data-indexa='{{a}}' data-index='{{index}}' style='width:60rpx;height:60rpx;' class='margin-left-lg' src='/icon/pop.png'></image>
+      </view>
+
+
+      <view class="cu-item cur margin-top-sm " style='width:76%'>
+        <view class="content">
+          <view class="cu-tag line-red ">有用信息</view>
+          <textarea class='solids-bottom padding-sm' style='height:200rpx;' placeholder='填写当天对其他驴友有用的信息，路况等' placeholder-class='text-df text-gray' data-index='{{index}}' maxlength='500' bindblur='getusefulmes' value='{{item.correctionsContent}}'></textarea>
+        </view>
+      </view>
+
+    </view>
+
+  </block>
+
+
+  <view class='flex justify-center margin-top-lg padding-bottom-lg'>
+    <image class='margin-right-lg' bindtap='addNum' style='width:100rpx;height:100rpx;' src='/icon/add.png'></image>
+    <image class='margin-left-lg' bindtap='popNum' style='width:100rpx;height:100rpx;' src='/icon/pop.png'></image>
+  </view>
+
+
+</view>

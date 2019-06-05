@@ -1,0 +1,132 @@
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
+  <view slot="content">确认订单</view>
+</cu-custom>
+
+<view class='cu-card'>
+
+  <view class='cu-item flex align-center justify-between padding  ' bindtap='selectAddress' wx:if='{{address==null&&productEntity?true:false}}' style='display:flex'>
+    <view class='flex align-center'>
+      <view class='icon-location  ' style='font-size:55rpx'></view>
+      <view class='text-center margin-left'>
+        <text class='title'>请选择地址</text>
+      </view>
+    </view>
+    <view class='icon-right'>
+    </view>
+  </view>
+
+  <view wx:if='{{address!=null&&productEntity?true:false}}' class='cu-item flex align-center justify-between padding ' bindtap='selectAddress' style='display:flex'>
+    <view class='flex align-center'>
+      <view class='icon-location  ' style='font-size:55rpx'></view>
+      <view class='margin-left'>
+        <view>
+          <text class='title'>收货人：{{address.contacts}}  {{address.phone}}</text>
+        </view>
+        <view class=' text-sm margin-top-xs'>
+          <text>收货地址：{{address.approximatelyAddress}}{{address.detailedAddress}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='icon-right'>
+    </view>
+  </view>
+
+
+
+  <view class='cu-item padding-sm'>
+    <view class='flex '>
+      <view>
+        <image style='width:100px;height:100px' src='{{productImg}}' mode='aspectFill'>
+        </image>
+      </view>
+
+      <view class='margin-left infomation'>
+        <text class='product-text text-lg'>{{productTitle}}</text>
+        <text class='product-text text-gray text-df margin-top-xs' >{{productDescribe}}</text>
+        <view class='flex justify-between'>
+          <text class="text-price text-red">{{price}}</text>
+          <text class=" ">x {{productCount}}</text>
+        </view>
+      </view>
+
+    </view>
+
+    <form>
+      <view class="cu-form-group margin-top">
+        <view class="title">数量</view>
+        <van-stepper value="{{ productCount }}" integer min="1" step="1" bind:change="productCountChange" />
+      </view>
+
+      <view class="cu-form-group" wx:if='{{productSaleType==2}}'>
+        <view class="title">租赁开始时间</view>
+        <picker mode="date" value="{{startDate}}" start="{{start_s_Date}}" bindchange="StartDateChange">
+          <view class="picker">
+            {{startDate}}
+          </view>
+        </picker>
+      </view>
+      <view class="cu-form-group" wx:if='{{productSaleType==2}}'>
+        <view class="title">租赁结束时间</view>
+        <picker mode="date" value="{{endDate}}" start="{{end_e_Date}}" bindchange="EndDateChange">
+          <view class="picker">
+            {{endDate}}
+          </view>
+        </picker>
+      </view>
+
+      <view class="cu-form-group " wx:if='{{productEntity}}'>
+        <view class="title">配送方式</view>
+        <picker bindchange="PickerChange" value="{{deliverIndex}}" range="{{picker}}">
+          <view class="picker">
+            {{picker[deliverIndex]}}
+          </view>
+        </picker>
+      </view>
+      
+      <view class="cu-form-group" wx:if='{{productEntity}}'>
+        <view class="title">运费</view>
+        <view class="title">{{deliverMoney}}元</view>
+      </view>
+
+      <view class="cu-form-group" wx:for="{{charges}}" wx:key>
+        <view class="title" data-index='{{index}}'>{{item.additionalChargesName}}
+          <!-- <text bindtap="showModal"  data-index='{{index}}' class="text-gray text-xs">(说明)</text> -->
+          <view class="cu-tag line-blue" wx:if="{{item.optionalGrade==3&&isStudent==true}}">已认证</view>
+
+          <navigator hover-class='none' url='/pages/mine/authentication/authentication' class="cu-tag text-cyan" style='background-color:#fff ;text-decoration:underline;' wx:if="{{item.optionalGrade==3&&isStudent==false}}">学生认证免押金</navigator>
+        </view>
+        <view class='flex align-center'>
+          <view class="title" style=' text-decoration:{{item.optionalGrade==3&&isStudent==true?"line-through":""}}'>{{item.chargesPrice}}元</view>
+          <checkbox-group wx:if="{{item.optionalGrade==1}}" data-index="{{index}}" bindchange="changeCharsges">
+            <checkbox class=" blue" checked></checkbox>
+          </checkbox-group>
+        </view>
+
+      </view>
+
+
+      <view class="cu-form-group align-start">
+        <view class="title">留言</view>
+        <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaBInput" placeholder="备注"></textarea>
+      </view>
+
+    </form>
+  </view>
+
+</view>
+
+<view class="cu-modal bottom-modal {{modalFlag?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white">
+      <view class="action text-green" bindtap="hideModal">确定</view>
+    </view>
+    <view class="padding-xl ">
+      {{modalContent}}
+    </view>
+  </view>
+</view>
+
+
+<van-submit-bar loading="{{isSubmit}}" price="{{ totalMoney*100 }}" button-text="提交订单" bind:submit="onSubmit" />
+
+<view class='canui-tabbar-bottom'></view>

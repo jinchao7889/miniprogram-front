@@ -1,1 +1,8 @@
 /* pages/trip/detailedhome/detailed-home.wxss */
+.co-jiehuo{
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 110rpx;
+  width: 100%;
+}

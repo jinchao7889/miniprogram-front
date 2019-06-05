@@ -1,1 +1,5 @@
 /* pages/trip/home/home.wxss */
+.stickyClass{
+    position: sticky;
+    z-index: 99;
+}

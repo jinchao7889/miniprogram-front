@@ -1,0 +1,17 @@
+/* mycompent/comment/comment.wxss */
+.bg-color{
+  background-color: rgb(221, 221, 221)
+}
+
+.flex-pad{
+  padding-left: 20rpx;
+}
+.img1{
+  width: 38rpx;
+  height: 38rpx;
+}
+.img{
+  width: 34rpx;
+  height: 34rpx;
+}
+

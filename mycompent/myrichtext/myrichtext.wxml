@@ -1,0 +1,34 @@
+<!--components/xing-editor.wxml-->
+
+<view class='margin-top padding' style='min-height:100vh;padding-bottom:200px ' >
+<view class="editor-wrapper "  >
+  <block wx:for="{{nodeList}}" wx:for-item="node" wx:for-index="index" wx:key="{{index}}">
+
+    <view >
+
+      <view wx:if="{{node.name === 'p'}}" class="text-xl  margin-bottom-sm"   style='word-break:break-all'>
+      <text space="nbsp">{{node.children[0].text}}</text>
+          
+      </view>
+      
+        <view wx:if="{{node.name === 'h'}}" class="  margin-bottom-sm  text-xxl  text-bold" style='word-break:break-all'>
+        <text space="nbsp">{{node.children[0].text}}</text>
+        
+      </view>
+ 
+
+      <view wx:if="{{node.name === 'img'}}">
+        <image class=" margin-top-sm margin-bottom-sm " style='border-radius:20rpx;width:100%' src="{{node.attrs.src}}" data-url="{{node.attrs.src}}" catchtap="previewImg"  mode='aspectFill'></image>
+      </view>
+
+      <view wx:if="{{node.name === 'video'}}">
+        <video src="{{node.attrs.src}}" controls style="height: {{node.attrs._height * 700}}rpx; width: 100%"></video>
+      </view>
+
+    </view>
+
+  </block>
+</view>
+
+
+</view>

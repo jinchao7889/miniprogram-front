@@ -1,0 +1,42 @@
+<view class="cu-list menu-avatar comment ">
+  <view class="cu-item" style='padding-bottom:0px'>
+    <image class="cu-avatar round " src='{{comment.answerHead}}'></image>
+    <view class="content">
+      <text class="text-gray tx">{{comment.answerNickname}}</text>
+      <view class=" text-black text-content text-df">
+        {{comment.content}}
+      </view>
+
+
+      <view wx:if='{{replyNumber!=0}}' class="bg-color padding-xs radius margin-top-sm">
+        <view class="flex ">
+          <view class="flex-sub  ">
+            <block wx:for='{{comment_secComments}}' wx:key='comment_secComments.answerUserId'>
+              <view>
+                <text class='text-grey text-df tx'>{{item.answerNickname}}</text>{{item.content}}
+              </view>
+            </block>
+          </view>
+        </view>
+
+        <view>
+          <navigator class="content" hover-class="none" url="/pages/comment/details/com-details?id={{comment.id}}&&tid={{travelid}}">
+            <text class='text-blue text-df'>{{replyNumber==0?'':'共'+comment.replyNumber+'条回复'}}</text>
+          </navigator>
+        </view>
+      </view>
+
+      <view class="flex justify-between ">
+        <view class="text-gray text-sm">{{comment.createTime}}</view>
+        <view class='flex align-center'>
+          <view class='flex margin-right-xl ' bindtap='godianzan'>
+            <text style='margin-right:10rpx'>{{likeNumber}}</text>
+            <image class='img1' src='{{isFabulous?"/icon/dianzanok.png":"/icon/dianzan.png"}}' />
+          </view>
+          <image bindtap='goreply' class='img' src='/icon/comment.png' />
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>

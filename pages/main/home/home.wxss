@@ -17,4 +17,13 @@
 		margin-left: calc(var(--left) * 100rpx - 150rpx);
 		z-index: var(--index);
 	}
+  .stickyClass{
+    position: sticky;
+    z-index: 99;
+}
+.gotop{
+  position: fixed;
+  bottom:40rpx;
+  width: 100%;
+}
 

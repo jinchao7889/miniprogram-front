@@ -11,21 +11,22 @@
       </view>
 
       <view style="top:{{StatusBar}}px">
-        <view class="cu-avatar lg round" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+        <view class="cu-avatar lg round" style="background-image:url({{userhead}});"></view>
       </view>
       <view class='margin-left'>
-      <view class='text-lg'>
-      <text>lallalala</text>
-      </view>
-      <view class='text-xs'>
-      <text>2018年3月18日</text>
-      </view>
+        <view class='text-lg'>
+          <text class='tx'>{{username}}</text>
+        </view>
+        <view class='text-xs padding-top-sm'>
+          <text>{{releaseTime}}</text>
+        </view>
       </view>
     </view>
-    <view>
-        <button class="cu-btn round bg-red shadow">关注</button>
-      </view>
+    <view >
+      <button class="cu-btn text-sm round bg-{{isfollow?'gray':'red'}} shadow" bindtap='isFollow'>{{isfollow?'已关注':'关注'}}</button>
+    </view>
   </view>
   <slot name="right"></slot>
-
 </view>
+
+

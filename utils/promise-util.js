@@ -1,5 +1,4 @@
 // const Promise = require('/lib/es6-promise.js');
-
 function wxPromise(method, url, data,header) {
   //返回一个Promise对象
   return new Promise(function (resolve, reject) {
@@ -48,17 +47,41 @@ function wxPromise(method, url, data,header) {
 
 
 function getRequest(url, data) {
-  var header = {
-    "Content-Type": "application/json"
+  try {
+    const value = wx.getStorageSync('access_token')
+    if (value) {
+      // Do something with return value
+      var header = {
+        "Content-Type": "application/json",
+        "Authorization": "bearer" + value
+      }
+      return wxPromise("GET", url, data, header);
+    }
+
+  } catch (e) {
+    // Do something when catch error
   }
-  return wxPromise("GET", url, data, header);
+  
 }
 
 function postRequest(url, data) {
-  var header={
-    "Content-Type": "application/json"
+  
+  try {
+    const value = wx.getStorageSync('access_token')
+    if (value) {
+      // Do something with return value
+      var header = {
+        "Content-Type": "application/json",
+        "Authorization": "bearer" + value
+      }
+      return wxPromise("POST", url, data, header);
+    }
+    
+  } catch (e) {
+    // Do something when catch error
   }
-  return wxPromise("POST", url, data, header);
+ 
+
 }
 
 function postFormRequest(url, data) {

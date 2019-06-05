@@ -1,44 +1,64 @@
 <cu-custom bgColor="bg-blue" isBack="{{true}}">
-  <view slot="content">{{title[index]}}</view>
+  <view slot="content">详细行程</view>
 </cu-custom>
 
 
-<preface wx:if="{{PageCur=='qianyan'}}"></preface>
-<xincheng wx:if="{{PageCur=='xincheng'}}"></xincheng>
-<qindan wx:if="{{PageCur=='qindan'}}"></qindan>
-<huaxiao wx:if="{{PageCur=='huaxiao'}}"></huaxiao>
-<jiehuo wx:if="{{PageCur=='jiehuo'}}"></jiehuo>
+<preface wx:if="{{PageCur=='qianyan'}}" mes='{{content}}'></preface>
+<xincheng wx:if="{{PageCur=='xincheng'}}" xinchengcontent='{{xinchengcontent}}'></xincheng>
+<qindan wx:if="{{PageCur=='qindan'}}" qindancontent='{{qindancontent}}'></qindan>
+<huaxiao wx:if="{{PageCur=='huaxiao'}}" huaxiaocontent='{{huaxiaocontent}}'></huaxiao>
+<jiehuo wx:if="{{PageCur=='jiehuo'}}" jiehuocontent='{{jiehuocontent}}' myjiehuocontent='{{myjiehuocontent}}' bindgotabselect='tabselect' bindgodetailquestion='goquestiondetail'></jiehuo>
+
+
+<view class='co-jiehuo' bindtap='goaddquestion' wx:if="{{PageCur=='jiehuo'}}">
+  <view class="cu-avatar xl round margin-left bg-red shadow-blur">
+    <text class="avatar-text">我要
+    提问</text>
+  </view>
+</view>
+
+
 <view class='cu-tabbar-height'></view>
 <view class="cu-bar tabbar bg-white shadow foot">
   <view class="action" bindtap="NavChange" data-cur="qianyan" data-index="0">
     <view class='icon-cu-image'>
       <image src="/icon/hi.png"></image>
     </view>
-    <view class="{{PageCur=='qianyan'?'text-black':'text-gray'}}">前言</view>
+    <view class="{{PageCur=='qianyan'?'text-red':'text-gray'}}">前言</view>
   </view>
   <view class="action" bindtap="NavChange" data-cur="xincheng" data-index="1">
     <view class='icon-cu-image'>
       <image src="/icon/xincheng.png"></image>
     </view>
-    <view class="{{PageCur=='xincheng'?'text-black':'text-gray'}}">行程</view>
+    <view class="{{PageCur=='xincheng'?'text-red':'text-gray'}}">行程</view>
   </view>
   <view class="action" bindtap="NavChange" data-cur="huaxiao" data-index="2">
     <view class='icon-cu-image'>
       <image src="/icon/huaxiao.png"></image>
     </view>
-    <view class="{{PageCur=='huaxiao'?'text-black':'text-gray'}}">花销</view>
+    <view class="{{PageCur=='huaxiao'?'text-red':'text-gray'}}">花销</view>
   </view>
   <view class="action" bindtap="NavChange" data-cur="qindan" data-index="3">
     <view class='icon-cu-image'>
       <image src="/icon/qindan.png"></image>
     </view>
-    <view class="{{PageCur=='qindan'?'text-black':'text-gray'}}">清单</view>
+    <view class="{{PageCur=='qindan'?'text-red':'text-gray'}}">清单</view>
   </view>
 
   <view class="action" bindtap="NavChange" data-cur="jiehuo" data-index="4">
     <view class='icon-cu-image'>
       <image src="/icon/jiehuo.png"></image>
     </view>
-    <view class="{{PageCur=='jiehuo'?'text-black':'text-gray'}}">解惑</view>
+    <view class="{{PageCur=='jiehuo'?'text-red':'text-gray'}}">解惑</view>
   </view>
 </view>
+
+
+  <view class='Model' wx:if='{{inputBoxShow}}'>
+    <!-- invisible_model view 用于点击隐藏model评论框 -->
+    <view class='invisible_model' catchtap='invisible'></view>
+    <view class='Input-box'>
+      <textarea class="tdTextarea" placeholder="回复：{{secondreplynickname}}" cursor-spacing="{{65}}" show-confirm-bar="{{false}}" adjust-position="{{true}}" auto-focus="{{true}}" fixed='{{true}}' bindinput='getTextare' />
+      <button class='Send' bindtap='publishquestion'>发表</button>
+    </view>
+  </view>

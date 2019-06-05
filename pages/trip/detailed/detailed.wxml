@@ -1,4 +1,4 @@
-<nav-bar bgColor="bg-blue" isBack="{{true}}">
+<nav-bar bgColor="bg-blue" isBack="{{true}}" userhead="{{content.userHead}}" username='{{content.userNickname}}' isfollow='{{content.isFollow}}' userid='{{content.userId}}'>
   <view slot='content'>
     行程
   </view>
@@ -7,53 +7,69 @@
 <view class="cu-card case" style='margin-top:20px'>
   <view class="cu-item shadow ">
     <view class='flex justify-between'>
-      <view >
+      <view>
         <view class=" text-xl padding">
-          <text class="text-black text-bold">峨眉山别样游</text>
+          <text class="text-black text-bold">{{content.title}}</text>
         </view>
         <view class=" text-lg padding">
-          <text class="text-black">出行方式：自驾</text>
+          <text class="text-black">方式：{{content.travelType}}</text>
         </view>
       </view>
-      <view cl>
+      <view>
         <view class='padding'>
-          <button class="cu-btn round bg-red shadow">查看游记</button>
+          <button class="cu-btn round bg-red shadow" bindtap='gochecktravels'>查看游记</button>
         </view>
-        <view class='flex justify-center'>
-            <image src='/icon/shoucang.png' class='png' style='height:30px;width:30px;' mode='aspectFit'></image>
-            <text class='text-xs'>收藏</text>
+        <view class='flex justify-center' bindtap='tripcollection'>
+          <image src="{{iscollection?'/icon/collectionok.png':'/icon/collection.png'}}" class='png' style='height:30px;width:30px;' mode='aspectFit'></image>
+          <view class='flex flex-direction justify-between'>
+            <text class='text-xs'>{{iscollection?'已收藏':'收藏'}}</text>
+            <text class='text-xs'>215</text>
+          </view>
         </view>
       </view>
     </view>
   </view>
 </view>
+
+
+
 <view class="cu-list menu sm-border padding">
   <view class="cu-item">
-    <navigator class="content" hover-class="none" url="../detailedhome/detailed-home" >
+    <navigator class="content" hover-class="none" url="../detailedhome/detailed-home?k=qianyan&&tripid={{tripid}}">
       <image src="/icon/hi.png" class="png" mode="aspectFit"></image>
       <text class="text-black">前言</text>
     </navigator>
   </view>
+
+
+
   <view class="cu-item ">
-    <view class="content">
+    <navigator class="content" hover-class="none" url="../detailedhome/detailed-home?k=xincheng&&tripid={{tripid}}">
       <image src="/icon/xincheng.png" class="png" mode="aspectFit"></image>
       <text class="text-black">行程</text>
-    </view>
+    </navigator>
   </view>
+
+
+
   <view class="cu-item ">
-    <button class="cu-btn content" open-type="contact">
-      <image src="/icon/huaxiao.png" class="png" mode="aspectFit"></image>
+    <navigator class="content" hover-class="none" url="../detailedhome/detailed-home?k=huaxiao&&tripid={{tripid}}">
+      <image src="/icon/huaxiao.png" class="png" mode="aspectFill"></image>
       <text class="text-black">花销</text>
-    </button>
+    </navigator>
   </view>
+
+
+
   <view class="cu-item ">
-    <navigator class="content" hover-class="none" url="../list/list" >
+    <navigator class="content" hover-class="none" url="../detailedhome/detailed-home?k=qindan&&tripid={{tripid}}">
       <image src="/icon/qindan.png" class="png" mode="aspectFit"></image>
       <text class="text-black">清单</text>
     </navigator>
   </view>
+
   <view class="cu-item">
-    <navigator class="content" hover-class="none" url="../list/list" open-type="redirect">
+    <navigator class="content" hover-class="none" url="../detailedhome/detailed-home?k=jiehuo&&tripid={{tripid}}">
       <image src="/icon/jiehuo.png" class="png" mode="aspectFit"></image>
       <text class="text-black">解惑</text>
     </navigator>

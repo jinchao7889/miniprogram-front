@@ -1,31 +1,18 @@
+const app = getApp();
+const wxRequest = require('../../../utils/promise-util.js');
 Page({
   data: {
     cardCur: 0,
-    swiperList: [{
-      op:0,
-      id: 2,
-      type: 'image',
-      url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556778569&di=75449f92660112dcee2922e50ed41202&imgtype=jpg&er=1&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F0310c6358057635a84a0e282b2f9145.jpg'
-    }, {
-      id: 3,
-      type: 'image',
-        url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556183700400&di=bbdf1632437e7f2bc038d91f43263693&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fphotoblog%2F1611%2F24%2Fc10%2F30486109_1479985745748_mthumb.jpg'
-    }, {
-      id: 4,
-      type: 'image',
-        url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556778441&di=3f6b8f6188a3c9c1d2ba80d1196d9bdf&imgtype=jpg&er=1&src=http%3A%2F%2Fuploads.5068.com%2Fallimg%2F171120%2F1-1G120135044.jpg'
-    }, {
-      id: 5,
-      type: 'image',
-        url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556183740176&di=0ca3af06d04e8a5e6985eb2794a9a51b&imgtype=0&src=http%3A%2F%2Fimgs.soufun.com%2Fnewshezuo%2F201507%2F09%2F84%2F89b1dc9055c09d1b04c1e5f358a3a542.jpeg'
-    }, {
-      id: 6,
-      type: 'image',
-        url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556778498&di=5d3559cdbe017ef45f80e8d7747c64c0&imgtype=jpg&er=1&src=http%3A%2F%2Fm.360buyimg.com%2Fn12%2Fjfs%2Ft640%2F335%2F434184159%2F429010%2F2e561d38%2F546858b8Naf044cc3.jpg%21q70.jpg'
-    }]
+    navList:[],
+    productList:[],
+    swiperList: []
   },
   onLoad() {
+    this.getProductType(1)
     this.towerSwiper('swiperList');
+    this.getSellWellProduct(1);
+    this.getSwiperImages(1);
+
     // 初始化towerSwiper 传已有的数组名即可
   },
   onPageScroll: function (e) {
@@ -43,15 +30,13 @@ Page({
     var op =parseInt(e.scrollTop*10/67);
     if (op>10){
       if(this.data.op<1){
-
         this.setData({
           op: 1
         })
       }
     }else{
       op=op/10;
-      console.log(op);//{scrollTop:99}
-
+      console.log(op);//{scrollTop:99
       this.setData({
         op: op
       })
@@ -121,5 +106,35 @@ Page({
         swiperList: list
       })
     }
+  }
+  ,
+  getProductType(shopId){
+    
+    wxRequest.getRequest(app.globalData.product_type_url + shopId,null).then(res=>{
+      this.setData({
+        navList: res
+      })
+    })
+  },
+  
+  getSellWellProduct(shopId) {
+    var pageQuery={
+        page:0,
+        size:10,
+      shopId: shopId
+    }
+    wxRequest.postRequest(app.globalData.product_sell_well_url, pageQuery).then(res => {
+      this.setData({
+        productList: res.dataList
+      })
+    })
+  },
+  getSwiperImages(shopId){
+    wxRequest.getRequest(app.globalData.shop_image_url + shopId, null).then(res => {
+      console.log(res)
+      this.setData({
+        swiperList: res
+      })
+    })
   }
 })

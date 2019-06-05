@@ -1,0 +1,119 @@
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
+  <view slot="content">订单详情</view>
+</cu-custom>
+
+<view class='flex flex-direction padding-sm bg-green'>
+  <text class='text-bold text-xl text-white'>交易成功</text>
+  <view class='flex justify-between margin-top-sm'>
+    <text>实付金额：￥548.00</text>
+    <text bindtap='goisfold'>费用明细</text>
+  </view>
+
+  <view wx:if='{{isfold}}' class='margin-top-lg'>
+
+    <view class='flex justify-between'>
+      <text>商品总价</text>
+      <text>￥608</text>
+    </view>
+    <view class='flex justify-between'>
+      <text>活动优惠</text>
+      <text>-￥60</text>
+    </view>
+    <view class='flex justify-between'>
+      <text>邮费</text>
+      <text>￥0</text>
+    </view>
+    <view class='flex justify-between'>
+      <text>实付金额</text>
+      <text>￥548</text>
+    </view>
+
+  </view>
+
+
+
+</view>
+
+<view class='flex flex-direction padding-sm bg-white'>
+  <view class='flex justify-between'>
+    <text class='text-lg' style='width:180rpx;'>取件地址</text>
+    <text class='text-lg' style='width:550rpx;'>成都市高新西区人民南路四段一号楼16-B1(9：30——17：00)(成都店)</text>
+  </view>
+  <view class='margin-top-sm flex justify-between'>
+    <text class='text-lg' style='width:180rpx;'>联系电话</text>
+    <text class='text-lg' style='width:550rpx;'>15680805722</text>
+  </view>
+</view>
+
+<view wx:if='{{}}' class='flex flex-direction padding-sm bg-white'>
+  <view class='flex justify-between'>
+    <text class='text-lg' style='width:180rpx;'>收货地址</text>
+    <text class='text-lg' style='width:550rpx;'>北京市海淀区长安街45号清华大学男生园4栋1单元405</text>
+  </view>
+  <view class='margin-top-sm flex justify-between'>
+    <text class='text-lg' style='width:180rpx;'>联系人</text>
+    <text class='text-lg' style='width:550rpx;'>张德帅</text>
+  </view>
+  <view class='margin-top-sm flex justify-between align-center'>
+    <text class='text-lg' style='width:180rpx;'>联系电话</text>
+    <text class='text-lg' style='width:550rpx;'>15680805722</text>
+  </view>
+</view>
+
+
+<view class='flex flex-direction padding-sm bg-white margin-top-sm'>
+  <text class='tx text-lg' style='width:100%;'>出租无人机大疆御无人机套餐整机无人机无人机无人机无人机啊啊啊啊啊出租</text>
+  <view>
+    <view class='margin-top-sm flex justify-between'>
+      <text class='text-gray' style='width:180rpx;'>取货方式</text>
+      <text style='width:450rpx;'>自取</text>
+    </view>
+    <view class='margin-top-sm flex justify-between'>
+      <text class='text-gray' style='width:180rpx;'>取还日期</text>
+      <text style='width:450rpx;'>2019-04-15至2019-04-30</text>
+    </view>
+    <view class='margin-top-sm flex justify-between'>
+      <text class='text-gray' style='width:180rpx;'>租用时长</text>
+      <text style='width:450rpx;'>19天</text>
+    </view>
+    <view class='margin-top-sm flex justify-between'>
+      <text class='text-gray' style='width:180rpx;'>租用件数</text>
+      <text style='width:450rpx;'>1件</text>
+    </view>
+    <view class='margin-top-sm flex justify-between'>
+      <text class='text-gray' style='width:180rpx;'>单价</text>
+      <text style='width:450rpx;'>￥100.00元/件/天</text>
+    </view>
+    <view class='margin-top-sm flex justify-between'>
+      <text class='text-gray' style='width:180rpx;'>套餐类型</text>
+      <text style='width:450rpx;'>御air+电池管家</text>
+    </view>
+  </view>
+
+</view>
+
+<view class='flex flex-direction padding-sm bg-white margin-top-sm'>
+  <text class='text-lg'>其他</text>
+  <view>
+    <view class='margin-top-sm flex justify-between'>
+      <text class='text-gray' style='width:180rpx;'>订单号</text>
+      <text style='width:550rpx;'>29102375654198254252</text>
+    </view>
+    <view class='margin-top-sm flex justify-between'>
+      <text class='text-gray' style='width:180rpx;'>创建时间</text>
+      <text style='width:550rpx;'>2019-04-08 18:00:08</text>
+    </view>
+  </view>
+</view>
+
+<view class='flex flex-direction padding-sm bg-white margin-top-sm'>
+  <text class='text-lg'>取消政策</text>
+  <text class='margin-top-sm'>1.取消/更改订单请及时联系客服
+      2.【自取】出行日期前1天18:00(含)之前申请取消，不收取损失费；出行日期前1天18:00(不含)之后申请取消，收取1天的租金作为损失费，由买家(租客)承担
+      3.【邮寄】快递寄出前取消，全额退款；寄出N天后取消，将收取N天的租金，且需买家(租客)承担往返运费和租金；其他情况请咨询客服
+      4.改期/续租请及时与客服沟通，原则上参考取消规则</text>
+</view>
+
+<view class='cancelbottom'>
+  <button class='bg-green text-white margin-right-sm margin-bottom-sm' size='mini' style='float:right;'>售后退款</button>
+</view>

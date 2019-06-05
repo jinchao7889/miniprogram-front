@@ -1,0 +1,15 @@
+.product-text{
+  display: -webkit-box;
+   overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.infomation{
+  width: 100%;
+  display: flex;
+  flex-direction:column;
+  justify-content:space-between;
+}

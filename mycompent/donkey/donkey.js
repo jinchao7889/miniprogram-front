@@ -7,7 +7,12 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    covermap:String,
+    title:String,
+    starttime:String,
+    peoplenum:Number,
+    price:Number,
+    collectionplace:String
   },
 
   /**

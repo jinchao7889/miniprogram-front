@@ -1,0 +1,55 @@
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
+  <view slot="content">热门留言</view>
+</cu-custom>
+
+
+<view class="cu-list menu-avatar comment ">
+  <view class="cu-item">
+    <image class="cu-avatar round bg-blue" src='{{recordcontent.answerHead}}' />
+    <view class="content">
+      <text class="text-gray tx">{{recordcontent.answerNickname}}</text>
+      <view class=" text-black text-content text-df">
+        {{recordcontent.content}}
+      </view>
+      <view class="text-gray text-sm padding-top-sm">{{recordcontent.createTime}}
+        <text class='text-blue padding-left' bindtap='gotoreplyparent'>回复</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class=' margin-top-sm bg-white'>
+  <view class='padding'>
+    <text class="text-black text-df  text-bold ">回复({{totalreply}})</text>
+  </view>
+
+
+  <block wx:for='{{recordcontent_secComments}}' wx:key='id'>
+    <view class="cu-list menu-avatar comment " style='margin-top:0px ;'>
+      <view class="cu-item" style='padding-top:0px'>
+        <image class="cu-avatar round " src='{{item.answerHead}}' />
+        <view class="content">
+          <text class="text-gray tx">{{item.answerNickname}}</text>
+          <view class=" text-black text-content text-df">
+            <text class="text-gray ">{{item.secondaryId==-1?'':'回复：'+item.toAnswerNickname}} </text> {{item.content}}
+          </view>
+          <view class="text-gray text-sm ">{{item.createTime}}
+            <text class='text-blue padding-left' bindtap='gotosecondreply' data-name='{{item.answerNickname}}' data-id='{{item.id}}' data-userid='{{item.answerUserId}}'>回复</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+</view>
+
+
+<view class='Model' wx:if="{{inputBoxShow}}">
+  <!-- invisible_model view 用于点击隐藏model评论框 -->
+  <view class='invisible_model' catchtap='invisible'></view>
+  <view class='Input-box'>
+    <textarea class="tdTextarea" placeholder="回复：{{secondreplynickname}}" cursor-spacing="{{65}}" show-confirm-bar="{{false}}" adjust-position="{{true}}" auto-focus='{{true}}' fixed='{{true}}' bindinput='getTextare' />
+    <button class='margin-top-sm Send' bindtap='publishcomment'>发表</button>
+  </view>
+</view>

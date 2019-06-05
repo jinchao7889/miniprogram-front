@@ -1,44 +1,47 @@
 <view class="cu-card case ">
   <view class="cu-item shadow bg-blue">
-    <view class="image " >
-      <image src="{{tripImage}}" style='display:block;' mode="widthFix"></image>
+    <view class="image ">
+      <image class='' src="{{tripcontent.coverMap}}" style='display:block;' mode='aspectFill'></image>
       <view class="cu-tag bg-blue">精选</view>
-      <view class="cu-bar bg " style='justify-content:flex-start'>
-        <view class=' flex align-center padding'  >
-          <view class="" >
-          <text class=" text-sl text-white align-end" style='text-align:bottom'>{{days}}</text>
-            <text class="margin-left-xs text-xxl text-white" >天</text>
+      <view class="cu-bar bg flex justify-between">
+        <view class=' flex align-center padding' style='padding-left:0rpx;'>
+          <view>
+            <text class=" text-sl text-white align-end" style='text-align:bottom'>{{tripcontent.travelDays}}</text>
+            <text class="margin-left-xs text-xxl text-white">天</text>
           </view>
-         
-          
         </view>
-        <view class='shuxian ' >
-          </view >
-        <view class=" margin-left-lg" style='width:300px'>
-            <view class=" text-xl  " >
-          <text class="text-left text-bold  text-white" >{{title}}</text>
+
+        <view>
+          <view class='shuxian' />
+        </view>
+
+
+        <view class="margin-left-lg " style='width:300px'>
+          <view class=" text-lg  ">
+            <text class="text-left text-bold  text-white tx" style='width:330rpx;height:46rpx;'>{{tripcontent.title}}</text>
           </view>
-            <view >
-            <text class=" text-left text-white" >出行方式:自驾 {{tripMode}}</text>
+          <view>
+            <text class=" text-left text-white">方式:{{tripcontent.travelType}}</text>
           </view>
-            <view  >
-            <text class="text-left  text-white" >人均消费:5000 {{tripMode}}</text>
-            </view>
+          <view>
+            <text class="text-left  text-white">人均:{{tripcontent.perCapitaConsumption}}元</text>
           </view>
-            <view style='width:100%' class='flex justify-center' >
-            <view>
-              <view class="cu-avatar round lg" style="background-image:url(https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1872915704,741224834&fm=85&app=63&f=JPEG?w=121&h=75&s=7CB019D7C8B32594790C81990300A040);"></view>
+        </view>
+        <view style='width:100%' class='flex justify-end'>
+          <view>
+            <view class='flex flex-direction align-center justify-center'>
+              <view class="cu-avatar round" style="background-image:url({{tripcontent.userHead}}); margin-left:0rpx;" />
+              <text class='tx text-center' style='width:60px'>张三23333</text>
               <view class=' text-sm'>
-                  <text class="icon-appreciatefill margin-lr-xs"></text> 20
-                  <text class="icon-messagefill margin-lr-xs"></text> 30
+                <text class="icon-appreciatefill margin-lr-xs"></text> 20
               </view>
             </view>
           </view>
-            </view>
-         
+        </view>
       </view>
-      
-           
-    </view>
-  </view>
 
+    </view>
+
+
+  </view>
+</view>

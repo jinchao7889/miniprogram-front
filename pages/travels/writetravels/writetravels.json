@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "mes-cmp": "/mycompent/writemes/mes/mes",
+    "trip-cmp": "/mycompent/writemes/trip/trip",
+    "travel-cmp": "/mycompent/writemes/travels/travels",
+    "publish-cmp": "/mycompent/writemes/publish/publish",
+    "writetravelnavbar-cmp": "/mycompent/writetravelnavbar/navbar"
+  }
+}

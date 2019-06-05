@@ -1,0 +1,4 @@
+.qianyan-textarea{
+  width: 100%;
+  height:1100rpx;
+}

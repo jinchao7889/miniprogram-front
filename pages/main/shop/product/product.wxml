@@ -1,0 +1,28 @@
+
+<cu-custom  bgColor="bg-blue" isBack="{{true}}">
+  <view slot="content">{{title}}</view>
+</cu-custom>
+
+<view class='cu-card' >
+<navigator class='cu-item padding-sm' wx:for="{{productList}}"  url='/pages/main/shop/goodsdetialed/goods-detailed?productId={{item.id}}' wx:key>
+    <view class='flex '>
+      <view >
+        <image style='width:100px;height:100px'src='{{item.coverImg}}' mode='aspectFill'>
+        </image >
+      </view>
+      <view class='margin-left infomation' >
+      <view>
+          <text class='product-text text-lg' >{{item.productName}}</text>
+      <text class='product-text text-gray text-df margin-top-xs' >{{item.productDescribe}}</text>
+      </view>
+  
+      <view class='flex justify-between'>
+
+        <text class="text-price text-red text-xl">{{item.productPrice}}</text>
+
+        <text class="text-grey ">60 人租过</text>
+      </view>
+      </view>
+    </view>
+ </navigator>
+</view>

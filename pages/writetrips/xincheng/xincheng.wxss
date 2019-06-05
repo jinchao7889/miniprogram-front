@@ -1,0 +1,7 @@
+.xinchenginputbox{
+  width: 80%;
+  height:80rpx;
+}
+.ipttime{
+  width: 100rpx;
+}

@@ -1,0 +1,21 @@
+.fengmian{
+  width: 80%;
+  height:300rpx; 
+}
+.travel-textarea{
+  width: 96%;
+  height:400rpx;
+}
+.travel-img{
+  width: 80rpx;
+  height: 80rpx;
+}
+.next-write{
+  position: fixed;
+  bottom: 20rpx;
+  width: 100%;
+}
+
+page{
+  background-color: white;
+}

@@ -1,3 +1,29 @@
-<cu-custom  bgColor="bg-blue" isBack="{{true}}">
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
   <view slot="content">我的游记</view>
 </cu-custom>
+
+<block wx:for='{{mes}}' wx:key='key'>
+  <travelmine-cmp covermap='{{item.coverMap}}' title='{{item.title}}' releasetime='{{item.releaseTime}}' browseVolume='{{item.browseVolume}}' commentVolume='{{item.commentVolume}}' bindlongpress='goedittravel' bindtap='gotraveldetail' releaseTime='{{item.releaseTime}}' data-index='{{index}}'/>
+</block>
+
+<view class='co-write flex align-center justify-center'>
+  <view class='flex align-center text-xl justify-center bg-blue' style='width:200rpx;height:80rpx;border-radius:50rpx;' bindtap='gowritenewcontent'>
+    <image class='write-img margin-right-sm' src='/icon/edit.png' /> 新建
+  </view>
+</view>
+
+
+<view wx:if='{{isshow==true}}' class='mask-travel' bindtap='cancel' />
+
+<view wx:if='{{isshow==true}}' class='mask margin-top-lg' style='top:{{CustomBar}}px;width:100%;'>
+
+  <view class='flex justify-around' style='width:100%;'>
+    <button class='bg-red text-white' size='mini' bindtap='godelet'>删除</button>
+    <button class='bg-blue text-white' size='mini' bindtap='goedit'>编辑</button>
+  </view>
+
+  <view class='flex justify-center align-center margin-top-xl'>
+    <text class='text-white text-xl text-bold text-center' style='width:600rpx;height:130rpx;'>请对 {{mes[index].title}} 游记进行操作</text>
+  </view>
+
+</view>

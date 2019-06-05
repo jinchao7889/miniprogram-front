@@ -1,0 +1,55 @@
+<view class='bg-white' style='margin-top:128rpx;'>
+  <view class='flex flex-direction  align-center'>
+    <image class='fengmian bg-gray radius margin-top-sm margin-bottom-sm' mode='aspectFill' src='{{fileUrl}}'>
+    </image>
+    <button class=' text-sm text-gray' bindtap='addimage'>添加/更改游记封面</button>
+  </view>
+</view>
+
+<form>
+  <view class="cu-form-group">
+    <view class="title">标题</view>
+    <input placeholder="游记标题" bindinput='gettitle' value='{{mes.title}}'></input>
+  </view>
+
+  <view class="cu-form-group">
+    <view class="title">旅行方式</view>
+    <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+      <view class="picker">
+        {{index!=null?picker[index]:'选择您的旅行方式'}}
+      </view>
+    </picker>
+  </view>
+
+  <view class="cu-form-group">
+    <view class="title">出发时间</view>
+    <picker mode="date" value="{{date}}" start="2008/09/01" end="2022/09/01" bindchange="DateChange">
+      <view class="picker">
+        {{date}}
+      </view>
+    </picker>
+  </view>
+
+  <view class="cu-form-group">
+    <view class="title">目的地</view>
+    <input placeholder="旅行的地方(代表性的一个)" bindinput='getplace' value='{{mes.travelDestination}}'></input>
+    <text class="icon-locationfill text-orange"></text>
+  </view>
+
+  <view class="cu-form-group">
+    <view class="title">旅行天数</view>
+    <input placeholder="旅行的时长" type='number' bindinput='getdays' value='{{mes.travelDays}}'></input>
+  </view>
+
+  <view class="cu-form-group">
+    <view class="title">人均消费</view>
+    <input placeholder="人均花的钱" type='number' bindinput='getcost' value='{{mes.perCapitaConsumption}}'></input>
+  </view>
+
+</form>
+
+<view class='next-write flex justify-end'>
+  <view class='margin-right-sm'>
+    <button class="cu-btn bg-green shadow" bindtap="stepsnext">下一步</button>
+  </view>
+</view>

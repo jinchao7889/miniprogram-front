@@ -1,0 +1,10 @@
+/* components/xing-editor.wxss */
+page{
+  background-color: white;
+}
+.editor-wrapper {
+  width: 100%;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+

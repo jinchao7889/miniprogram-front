@@ -1,0 +1,89 @@
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
+  <view slot="content">订单详情</view>
+</cu-custom>
+
+<view class='flex flex-direction padding-sm bg-green'>
+  <text class='text-bold text-xl text-white'>交易成功</text>
+  <view class='flex justify-between margin-top-sm'>
+    <text>实付金额：￥548.00</text>
+    <text bindtap='goisfold'>费用明细</text>
+  </view>
+
+  <view wx:if='{{isfold}}' class='margin-top-lg'>
+    <view class='flex justify-between'>
+      <text>商品总价</text>
+      <text>￥608</text>
+    </view>
+    <view class='flex justify-between'>
+      <text>活动优惠</text>
+      <text>-￥60</text>
+    </view>
+    <view class='flex justify-between'>
+      <text>邮费</text>
+      <text>￥0</text>
+    </view>
+    <view class='flex justify-between'>
+      <text>实付金额</text>
+      <text>￥548</text>
+    </view>
+  </view>
+</view>
+
+<view class='bg-white flex align-center'>
+<image class='padding-sm' src='https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=0f894a3356da81cb5aeb8b9f330fbb73/91529822720e0cf3752dec3c0d46f21fbf09aa1b.jpg' style='width:150rpx;height:150rpx;' />
+<text class='text-lg' style='width:550rpx;'>青海湖深度旅行7天大环线之旅青海湖深度旅行7天大环线之旅青海湖深度旅行7天大环线之旅</text>
+</view>
+
+
+
+<view class='flex flex-direction padding-sm bg-white margin-top-sm'>
+  <text class='text-lg'>旅行信息</text>
+  <view>
+    <view class='margin-top-sm flex justify-between'>
+      <text class='text-gray' style='width:180rpx;'>旅行天数</text>
+      <text style='width:450rpx;'>7天</text>
+    </view>
+    <view class='margin-top-sm flex justify-between'>
+      <text class='text-gray' style='width:180rpx;'>出发时间</text>
+      <text style='width:450rpx;'>2019-04-15</text>
+    </view>
+    <view class='margin-top-sm flex justify-between'>
+      <text class='text-gray' style='width:180rpx;'>集合地点</text>
+      <text style='width:450rpx;'>百草路地铁A口</text>
+    </view>
+  </view>
+
+</view>
+
+
+
+<view class='flex flex-direction padding-sm bg-white margin-top-sm'>
+  <text class='text-lg'>其他</text>
+  <view>
+    <view class='margin-top-sm flex justify-between'>
+      <text class='text-gray' style='width:180rpx;'>订单号</text>
+      <text style='width:550rpx;'>29102375654198254252</text>
+    </view>
+    <view class='margin-top-sm flex justify-between'>
+      <text class='text-gray' style='width:180rpx;'>创建时间</text>
+      <text style='width:550rpx;'>2019-04-08 18:00:08</text>
+    </view>
+  </view>
+</view>
+
+
+<view class='flex flex-direction padding-sm bg-white margin-top-sm'>
+  <text class='text-lg'>取消政策</text>
+  <text class='margin-top-sm'>1.取消/更改订单请及时联系客服
+      2.【自取】出行日期前1天18:00(含)之前申请取消，不收取损失费；出行日期前1天18:00(不含)之后申请取消，收取1天的租金作为损失费，由买家(租客)承担
+      3.【邮寄】快递寄出前取消，全额退款；寄出N天后取消，将收取N天的租金，且需买家(租客)承担往返运费和租金；其他情况请咨询客服
+      4.改期/续租请及时与客服沟通，原则上参考取消规则</text>
+</view>
+
+
+
+
+
+<view class='cancelbottom'>
+  <button class='bg-green text-white margin-right-sm margin-bottom-sm' size='mini' style='float:right;'>售后退款</button>
+</view>

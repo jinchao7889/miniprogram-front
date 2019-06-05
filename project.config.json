@@ -9,7 +9,15 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.5",
@@ -19,6 +27,8 @@
 		"hidedInDevtools": []
 	},
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -28,13 +38,241 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 31,
+			"list": [
+				{
+					"id": -1,
+					"name": "mine-travels",
+					"pathName": "pages/mine/travels/travels",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "travels-detail",
+					"pathName": "pages/travels/details/details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "comment-detail",
+					"pathName": "pages/comment/details/com-details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "ordermes",
+					"pathName": "pages/mine/ordermes/ordermes",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "detail-home",
+					"pathName": "pages/trip/detailedhome/detailed-home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "trip-home",
+					"pathName": "pages/trip/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "trip-detail",
+					"pathName": "pages/trip/detailed/detailed",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "questiondetail",
+					"pathName": "pages/trip/questiondetail/questiondetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "writetravels",
+					"pathName": "pages/travels/writetravels/writetravels",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "writetravels-xincheng",
+					"pathName": "pages/writetrips/xincheng/xincheng",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "writetrips-huaxiao",
+					"pathName": "pages/writetrips/huaxiao/huaxiao",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "writetrips-清单",
+					"pathName": "pages/writetrips/qindan/qindan",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "mine",
+					"pathName": "pages/mine/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "caogao",
+					"pathName": "pages/caogao/caogao",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "write-qianyan",
+					"pathName": "pages/writetrips/qianyan/qinyan",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "trip-qianyan",
+					"pathName": "pages/writetrips/qianyan/qinyan",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "trip-xincheng",
+					"pathName": "pages/writetrips/xincheng/xincheng",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "mine-trip",
+					"pathName": "pages/mine/trip/trip",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "mine-travel",
+					"pathName": "pages/mine/travels/travels",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main-donkey",
+					"pathName": "pages/main/donkey/donkey",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "main-shop",
+					"pathName": "pages/main/shop/shop",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "travel-detail",
+					"pathName": "pages/travels/details/details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "myfollow",
+					"pathName": "pages/myfollow/myfollow",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "donkey",
+					"pathName": "pages/main/donkey/donkey",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "sign-up",
+					"pathName": "pages/donkey-signup/sign-up/signup",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "donkey",
+					"pathName": "pages/main/donkey/donkey",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "mine-trip",
+					"pathName": "pages/mine/trip/trip",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "orderform",
+					"pathName": "pages/mine/ordermes/ordermes",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "orderform",
+					"pathName": "pages/mine/ordermes/ordermes",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "orderformdetail",
+					"pathName": "pages/mine/ordermesdetail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "orderformdonkeydetail",
+					"pathName": "pages/mine/ordermesdonkeydetail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "goods-detailed",
+					"pathName": "pages/main/shop/goodsdetialed/goods-detailed",
+					"scene": null
+				}
+			]
 		}
 	}
 }

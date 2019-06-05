@@ -1,2 +1,30 @@
-<!--mycompent/trip/qindan/qindan.wxml-->
-<text>mycompent/trip/qindan/qindan.wxml</text>
+<scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
+  <view class="flex text-center">
+    <view class="cu-item  {{index==TabCur?'text-blue cur':''}}" wx:for="{{9}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      {{tableData[index]}}
+    </view>
+  </view>
+</scroll-view>
+
+
+<swiper class="tab-box" style='height:100vh;' current="{{currentTab}}" duration="300" bindchange="switchTab">
+  <swiper-item wx:for="{{listcontent}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
+    <view class="cu-list menu sm-border card-menu margin-top">
+      <block wx:for='{{tabItem}}' wx:key='key'>
+        <view class="cu-item">
+          <view class="flex align-center">
+            <text class="icon-title text-blue"></text>
+            <text class="text-grey">{{item.inventoryElement}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </swiper-item>
+</swiper>
+
+
+<!-- <view class="cu-bar">
+        <view class="action">
+          <text class="icon-title text-blue"></text>{{item}}
+        </view>
+      </view> -->

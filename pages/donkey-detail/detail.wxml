@@ -1,0 +1,102 @@
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
+  <view slot="content">旅行详情</view>
+</cu-custom>
+
+<swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{swiperList}}" wx:key='key'>
+    <image src="{{item.imgUrl}}" mode="aspectFill" />
+  </swiper-item>
+</swiper>
+
+<view class='solid-bottom padding bg-white'>
+  <view class=" text-xl ">
+    <text class="text-black text-bold">{{mes.title}}</text>
+  </view>
+
+  <view class='padding-sm'>
+    <text class='text-xl text-bold text-red'>￥</text>
+    <text class='text-xl text-bold text-red'>{{mes.price}}</text>
+    <text class='text-sm text-pink'> (定金:{{mes.earnestMoney}})</text>
+  </view>
+
+  <view class='flex padding justify-around radius solid '>
+    <view class="flex flex-direction text-sm ">
+      <text class="text-grey">出发时间：{{mes.startActivity}}</text>
+      <text class="text-grey margin-top-sm">人员数量：{{mes.maxPeopleNumber}}人(已报名{{mes.enrolmentPeopleNumber}}人)</text>
+    </view>
+
+    <view class="flex flex-direction text-sm ">
+      <text class="text-grey">旅行天数：{{mes.activityDays}}天</text>
+      <text class="text-grey margin-top-sm">集合地点：{{mes.collectionPlace}}</text>
+    </view>
+  </view>
+
+</view>
+
+<view class='bg-white'>
+  <text>旅行详情</text>
+  <view>
+    此处为富文本区域 {{mes.content}}
+  </view>
+</view>
+
+<view class=' padding bg-white margin-top-sm'>
+  <text class="text-black text-xl">留言板({{commentnum}})</text>
+
+  <block wx:for='{{comment}}' wx:key='travelsId'>
+    <livingmes-cmp bindgoreply='gotoreply' content='{{item.content}}' comment_secComments='{{item.secComments}}' activityid='{{item.activityId}}' data-index='{{index}}' replyNumber='{{item.replyNumber}}' answerhead='{{item.answerHead}}' answernickname='{{item.answerNickname}}'
+      parentid='{{item.id}}' creattime='{{item.createTime}}' />
+  </block>
+
+</view>
+
+
+
+
+
+<view class='canui-tabbar-bottom'></view>
+<view class="cu-bar tabbar bg-white shadow foot">
+  <view class="action" bindtap='goservice'>
+    <view class='icon-cu-image'>
+      <view class="cu-tag badge"></view>
+      <image src="/icon/icon_service.png"></image>
+    </view>
+    <view>客服</view>
+  </view>
+
+
+  <view class="action" bindtap='gosignup'>
+    <view class='icon-cu-image '>
+      <image src="/icon/appointment.png"></image>
+    </view>
+    <view>报名</view>
+  </view>
+
+
+  <view class="action" bindtap='golvingmes'>
+    <view class='icon-cu-image '>
+      <image src="/icon/message.png"></image>
+      <view class="cu-tag badge"></view>
+    </view>
+    <view>留言</view>
+  </view>
+
+
+
+</view>
+
+
+
+
+
+
+
+
+
+<view class='Model' wx:if='{{inputBoxShow}}'>
+  <view class='invisible_model' catchtap='invisible'></view>
+  <view class='Input-box'>
+    <textarea class='tdTextarea' placeholder='请留下您的留言或问题' cursor-spacing='{{65}}' show-confirm-bar='{{false}}' adjust-position='{{true}}' auto-focus='{{true}}' fixed='{{true}}' bindinput='getTextare' />
+    <button class='margin-top-sm Send' bindtap='publishComment'>发表</button>
+  </view>
+</view>

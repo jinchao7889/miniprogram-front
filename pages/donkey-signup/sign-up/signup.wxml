@@ -1,0 +1,92 @@
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
+  <view slot="content">报名</view>
+</cu-custom>
+
+<view>
+
+  <form>
+
+    <view class="flex justify-center align-center bg-white padding-top-xl">
+      <image src='/icon/pencil.png' style='width:60rpx;height:60rpx;' class=' margin-right-sm'></image>
+      <text class='text-lg text-bold'>个人参与信息</text>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">姓名</view>
+      <input placeholder="Name" bindinput='getusername'></input>
+    </view>
+
+
+    <view class="cu-form-group">
+      <view class="title">性别</view>
+      <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+        <view class="picker">
+          {{index!=null?picker[index]:'Gender'}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">身份证</view>
+      <input placeholder="ID" bindinput='getcontact' type='idcard'></input>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">电话</view>
+      <input placeholder="Phone" bindinput='getphone'></input>
+    </view>
+
+
+    <view class="cu-form-group">
+      <view class="title">QQ</view>
+      <input placeholder="QQ"  bindinput='getQQnumber'></input>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">微信</view>
+      <input placeholder="WeChat" bindinput='getwechat'></input>
+    </view>
+
+  </form>
+
+</view>
+
+
+
+
+<view class='cu-item padding-sm' wx:if='{{pid!=0}}'>
+
+  <view class='flex bg-white'>
+    <view>
+      <image style='width:100px;height:100px' src='{{productImg}}' mode='aspectFill'>
+      </image>
+    </view>
+    <view class='margin-left infomation'>
+      <text class='product-text '>{{productTitle}}</text>
+      <view class='flex justify-between padding-sm'>
+        <text class="text-price text-red">{{price}}({{specsName}})</text>
+        <text class=" ">x1</text>
+      </view>
+    </view>
+  </view>
+
+  <form>
+
+    <view class="cu-form-group margin-top">
+      <view class="title">付款选择</view>
+      <picker bindchange="PickerChange1" value="{{index1}}" range="{{picker1}}" range-key="{{'specsName'}}">
+        <view class="picker">
+          {{picker1[index1].specsName}}
+        </view>
+      </picker>
+    </view>
+
+  </form>
+
+</view>
+
+
+<view class='flex justify-between' style='width:100%;position:fixed;bottom:20rpx;'>
+  <button class='bg-red  text-white' size='mini' bindtap='gocancel'>取消</button>
+  <button class='bg-blue  text-white' size='mini' bindtap='goGenerateorderform'>确定</button>
+</view>

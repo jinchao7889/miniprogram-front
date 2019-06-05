@@ -1,10 +1,10 @@
 <view class='UCenter-bg'>
   <image src='/images/logo.png' class='png' mode='widthFix'></image>
-  <view class='text-xl'>ColorUI组件库
-    <text class='text-df'>v2.0</text>
+  <view class='text-xl'>易驴驴行
+    <text class='text-df'>v1.0</text>
   </view>
   <view class='margin-top-sm'>
-    <text>By:文晓港</text>
+    <text>By:易驴小程序开发组</text>
   </view>
 </view>
 <view class='padding-xl'>

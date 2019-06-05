@@ -19,16 +19,15 @@
     </view>
   </view>
 </view>
-<view class="cu-bar bg-white margin-top-xs">
+<view class="cu-bar bg-white margin-top-xs" bindtap='gototriphome'>
   <view class='action'>
     <text class='icon-titles text-orange '></text> 清明去哪儿玩？
   </view>
-  <navigator hover-class='none' url="/pages/trip/home/home">
-    <view class='action' style="font-size: 27rpx;"> 更多
-      <view class='icon-right'></view>
-    </view>
-  </navigator>
+  <view class='action' style="font-size: 27rpx;"> 更多
+    <view class='icon-right'></view>
+  </view>
 </view>
+
 <swiper class="card-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
   <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
     <view class="swiper-item">
@@ -41,24 +40,30 @@
   <view class='action'>
     <text class='icon-titles text-orange '></text> 精选游记
   </view>
-  <navigator hover-class='none' url="/pages/home/groom/index">
-    <view class='action' style="font-size: 27rpx;"> 更多
-      <view class='icon-right'></view>
-    </view>
-  </navigator>
 </view>
 
-<navigator hover-class='none' url='/pages/travels/details/details'>
-<travels-main>
-</travels-main>
-</navigator>
+<view class="stickyClass" style='top:{{CustomBar}}px' id="bffix">
+  <scroll-view scroll-x class="bg-white nav">
+    <view class="flex text-center">
+      <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{tableData}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+        {{item}}
+      </view>
+    </view>
+  </scroll-view>
+</view>
 
 
-<travels-main>
-</travels-main>
-<travels-main>
-</travels-main>
-<travels-main>
-</travels-main>
-<travels-main>
-</travels-main>
+<block wx:for='{{hometravels}}' wx:key='travelsId'>
+  <navigator hover-class='none' url='/pages/travels/details/details?tid={{item.travelsId}}'>
+    <travels-main travels='{{item}}' />
+  </navigator>
+</block>
+
+<view class="cu-load text-black {{!isLoad?'loading':'over'}}"></view>
+
+
+
+
+<view class='gotop flex justify-end' hidden='{{!floorstatus}}'>
+  <image class='margin-right-lg' src='/icon/gotop.png' style='width:80rpx;height:80rpx;' bindtap='gotop'></image>
+</view>

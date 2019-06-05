@@ -62,5 +62,20 @@
     margin-right:8rpx;
 }
 
+.shop-type-image{
+  
+  background-repeat:no-repeat;
+  background-size:25px 25px;
+background-position:center;
+}
+
+.product-text{
+  display: -webkit-box;
+   overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
 
 

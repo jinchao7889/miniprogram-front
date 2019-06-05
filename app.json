@@ -1,17 +1,38 @@
 {
   "pages": [
     "pages/main/home/home",
+    "pages/trip/home/home",
+    "pages/mine/home/home",
     "pages/main/shop/shop",
     "pages/main/donkey/donkey",
-    "pages/mine/home/home",
     "pages/mine/travels/travels",
     "pages/mine/trip/trip",
-    "pages/trip/home/home",
     "pages/trip/detailed/detailed",
     "pages/trip/detailedhome/detailed-home",
     "pages/auth/auth",
     "pages/main/shop/goodsdetialed/goods-detailed",
-    "pages/travels/details/details"
+    "pages/travels/details/details",
+    "pages/comment/details/com-details",
+    "pages/mine/ordermes/ordermes",
+    "pages/trip/questiondetail/questiondetail",
+    "pages/travels/writetravels/writetravels",
+    "pages/writetrips/huaxiao/huaxiao",
+    "pages/writetrips/qianyan/qinyan",
+    "pages/writetrips/qindan/qindan",
+    "pages/writetrips/xincheng/xincheng",
+    "pages/caogao/caogao",
+    "pages/donkey-detail/detail",
+    "pages/myfollow/myfollow",
+    "pages/comment/lvingmes-detail/detail",
+    "pages/donkey-signup/sign-up/signup",
+    "pages/mine/address/myaddress",
+    "pages/mine/address/detail/myaddressdetail",
+    "pages/main/shop/order/order",
+    "pages/main/shop/product/product",
+    "pages/mine/authentication/authentication",
+    "pages/mine/ordermesdetail/detail",
+    "pages/mine/ordermesdonkeydetail/detail",
+    "pages/activitysignuodetail/detail"
   ],
   "window": {
     "navigationBarBackgroundColor": "#39b54a",
@@ -41,5 +62,6 @@
         "text": "我的"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

@@ -1,0 +1,42 @@
+<!--mycompent/orderform/orderform.wxml-->
+<view class='cu-card'>
+  <view class='cu-item shadow-warp text-lg' style='margin-bottom:0px'>
+    <view class='flex justify-between padding-sm '>
+      <text selectable='{{true}}'>订单号：{{orderId}}</text>
+      <text wx:if='{{orderState==10}}' class='text-red text-bold text-xl'>待付款</text>
+      <text wx:if='{{orderState==20}}' class='text-red text-bold text-xl'>已付款</text>
+      <text wx:if='{{orderState==30}}' class='text-red text-bold text-xl'>进行中</text>
+      <text wx:if='{{orderState==40}}' class='text-red text-bold text-xl'>已完成</text>
+    </view>
+    <text class='text-sm text-gray margin-left-sm'>创建时间:{{createTime}}</text>
+    <view class='flex padding-sm'>
+      <image class='orderformimg' src='{{productThumbnail}}' />
+      <view class='margin-left-sm'>
+        <view class='flex align-center'>
+          <text class='orderformtx'>{{productName}}</text>
+          <view class='flex flex-direction margin-left-sm align-end' style='width:155rpx;'>
+            <text class='text-red text-bold '>{{productPrice}}元</text>
+            <text class='text-red text-bold '>x{{productCount}}</text>
+          </view>
+        </view>
+        <view class='flex text-sm text-gray margin-top-sm'>
+          <view>
+            支付选择：
+            <text>{{specsDec}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='padding-left-sm '>
+      合计：
+      <text>{{payMoney}}.00元</text>
+    </view>
+    <view class='flex justify-end'>
+      <view class='flex justify-end align-center margin-sm ' style='width:250rpx;'>
+        <view wx:if='{{orderState==10}}' class="cu-tag radius bg-red">去付款</view>
+        <view wx:if='{{orderState==40}}' class="cu-tag radius bg-red" bindtap='goreply'>去评价</view>
+      </view>
+    </view>
+
+  </view>
+</view>

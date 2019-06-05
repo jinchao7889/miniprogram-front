@@ -1,0 +1,14 @@
+.xinchenginputbox{
+  width: 80%;
+  height:80rpx;
+}
+.ipttime{
+  width: 100rpx;
+}
+.bg-money{
+width: 100%;
+height: 100rpx;
+background-color: rgba(19, 34, 122, 1);
+border: 2rpx solid rgba(255, 255, 255, 0);
+
+}

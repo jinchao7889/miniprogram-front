@@ -1,0 +1,32 @@
+<cu-custom  bgColor="bg-blue" isBack="{{true}}">
+  <view slot="content">游记主页</view>
+</cu-custom>
+
+
+  <swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+    <swiper-item wx:for="{{swiperList}}" wx:key>
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </swiper-item>
+  </swiper>
+
+<view class="cu-bar bg-white  solid-bottom">
+  <view class='action'>
+    <text class='icon-titles text-orange '></text> 全部游记
+  </view>
+</view>
+
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{tableData}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      {{item}}
+    </view>
+  </view>
+</scroll-view>
+
+<navigator hover-class='none'  url='/pages/trip/detailed/detailed'>
+<trip-main  title="可可西里"></trip-main>
+</navigator>
+
+
+<travels-cmp />

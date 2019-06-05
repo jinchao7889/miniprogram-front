@@ -73,6 +73,8 @@ image.loading::before {
   z-index: -2;
 }
 
+
+
 image.loading::after {
   content: "\e7f1";
   font-family: "cuIcon";
@@ -968,7 +970,7 @@ button.icon.lg {
 
 .cu-load.loading::before {
   content: "\e67a";
-  animation: icon-spin 2s infinite linear;
+  animation: icon-spin 1s infinite linear;
 }
 
 .cu-load.loading::after {

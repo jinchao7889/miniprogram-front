@@ -1,0 +1,58 @@
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
+  <view slot="content">问题详情</view>
+</cu-custom>
+
+<view class="cu-list menu-avatar comment ">
+  <view class="cu-item">
+    <image class="cu-avatar round bg-blue" src='{{questiondetail.userHead}}' />
+    <view class="content">
+      <text class="text-gray tx">{{questiondetail.userNickname}}</text>
+      <view class=" text-black text-content text-df">
+        {{questiondetail.question}}
+      </view>
+      <view class="text-gray text-sm padding-top-sm">{{questiondetail.createTime}}
+        <text class='text-blue padding-left' bindtap='goreplyquestion'>回复</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class=' margin-top-sm bg-white'>
+  <view class='padding'>
+    <text class="text-black text-df  text-bold ">回复({{totalreply}})</text>
+  </view>
+
+ <view wx:if='{{totalreply==0?true:false}}' class='flex justify-center padding-top-lg'>暂时没有回复 </view>
+
+  <view wx:if='{{totalreply==0?false:true}}'>
+    <block wx:for='{{questiondetailanswer}}' wx:key='{{item.id}}'>
+      <view class="cu-list menu-avatar comment " style='margin-top:0px ;'>
+        <view class="cu-item" style='padding-top:0px'>
+          <image class="cu-avatar round " src='{{item.answerHead}}' />
+          <view class="content">
+            <text class="text-gray tx">{{item.answerNickname}}</text>
+            <view class=" text-black text-content text-df">
+              <text class="text-gray ">{{item.parentId==-1?'':'回复：'+item.toAnswerNickname}} </text> {{item.content}}
+            </view>
+            <view class="text-gray text-sm ">{{item.createTime}}
+              <text class='text-blue padding-left' bindtap='goreply' data-name='{{item.answerNickname}}' data-id='{{item.id}}' data-userid='{{item.answerUserId}}'>回复</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+
+</view>
+
+
+<view class='Model' wx:if="{{inputBoxShow}}">
+  <!-- invisible_model view 用于点击隐藏model评论框 -->
+  <view class='invisible_model' catchtap='invisible'></view>
+  <view class='Input-box'>
+    <textarea class="tdTextarea" placeholder="回复：{{secondreplynickname}}" cursor-spacing="{{65}}" show-confirm-bar="{{false}}" adjust-position="{{true}}" auto-focus="{{true}}" fixed='{{true}}' bindinput='getTextare' />
+    <button class='Send' bindtap='publishcomment'>发表</button>
+  </view>
+</view>

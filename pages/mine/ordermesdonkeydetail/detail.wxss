@@ -1,0 +1,6 @@
+.cancelbottom{
+  position: fixed;
+  bottom:0rpx;
+  width: 100%;
+  z-index: 99;
+}

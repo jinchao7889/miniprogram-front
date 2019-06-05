@@ -1,0 +1,66 @@
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
+  <view slot="content">订单中心</view>
+</cu-custom>
+
+<view class='fixed cu-bar' style="top:{{CustomBar-4}}px;">
+  <scroll-view scroll-x class="bg-white nav">
+    <view class="flex text-center">
+      <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{4}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+        {{tableData[index]}}
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<view wx:if='{{tabid==0}}' style='margin-top:45px'>
+  <block wx:for='{{ordermes}}' wx:key>
+    <orderform-cmp wx:if='{{item.orderType==2}}' bindtap='goorderdetail' orderState='{{item.orderState}}' orderId='{{item.orderId}}' createTime='{{item.createTime}}' startTime='{{item.startTime}}' endTime='{{item.endTime}}' payMoney='{{item.payMoney}}' productThumbnail='{{item.orderProducts[0].productThumbnail}}'
+      productName='{{item.orderProducts[0].productName}}' productPrice='{{item.orderProducts[0].productPrice}}' productCount='{{item.orderProducts[0].productCount}}' specsDec='{{item.orderProducts[0].specsDec}}' data-index='{{index}}' />
+
+    <orderform-donkey-cmp wx:if='{{item.orderType==1}}' bindtap='godonkeyorderdetail' orderState='{{item.orderState}}' orderId='{{item.orderId}}' createTime='{{item.createTime}}' payMoney='{{item.payMoney}}' productThumbnail='{{item.orderProducts[0].productThumbnail}}'
+      productName='{{item.orderProducts[0].productName}}' productPrice='{{item.orderProducts[0].productPrice}}' productCount='{{item.orderProducts[0].productCount}}' specsDec='{{item.orderProducts[0].specsDec}}' data-index='{{index}}' />
+  </block>
+</view>
+
+<view wx:if='{{tabid==1}}' style='margin-top:45px'>
+  <block wx:for='{{ordermesnopay}}' wx:key>
+
+    <orderform-cmp wx:if='{{item.orderType==2&&item.orderState==10}}' orderState='{{item.orderState}}' orderId='{{item.orderId}}' createTime='{{item.createTime}}' startTime='{{item.startTime}}' endTime='{{item.endTime}}' payMoney='{{item.payMoney}}' productThumbnail='{{item.orderProducts[0].productThumbnail}}'
+      productName='{{item.orderProducts[0].productName}}' productPrice='{{item.orderProducts[0].productPrice}}' productCount='{{item.orderProducts[0].productCount}}' specsDec='{{item.orderProducts[0].specsDec}}' data-index='{{index}}' />
+
+    <orderform-donkey-cmp wx:if='{{item.orderType==1&&item.orderState==10}}' orderState='{{item.orderState}}' orderId='{{item.orderId}}' createTime='{{item.createTime}}' payMoney='{{item.payMoney}}' productThumbnail='{{item.orderProducts[0].productThumbnail}}'
+      productName='{{item.orderProducts[0].productName}}' productPrice='{{item.orderProducts[0].productPrice}}' productCount='{{item.orderProducts[0].productCount}}' specsDec='{{item.orderProducts[0].specsDec}}' data-index='{{index}}' />
+
+
+  </block>
+</view>
+
+<view wx:if='{{tabid==2}}' style='margin-top:45px'>
+
+  <block wx:for='{{ordermesing}}' wx:key>
+
+    <orderform-cmp wx:if='{{item.orderType==2&&item.orderState==20}}' orderState='{{item.orderState}}' orderId='{{item.orderId}}' createTime='{{item.createTime}}' startTime='{{item.startTime}}' endTime='{{item.endTime}}' payMoney='{{item.payMoney}}' productThumbnail='{{item.orderProducts[0].productThumbnail}}'
+      productName='{{item.orderProducts[0].productName}}' productPrice='{{item.orderProducts[0].productPrice}}' productCount='{{item.orderProducts[0].productCount}}' specsDec='{{item.orderProducts[0].specsDec}}' data-index='{{index}}' />
+
+    <orderform-donkey-cmp wx:if='{{item.orderType==1&&item.orderState==20}}' orderState='{{item.orderState}}' orderId='{{item.orderId}}' createTime='{{item.createTime}}' payMoney='{{item.payMoney}}' productThumbnail='{{item.orderProducts[0].productThumbnail}}'
+      productName='{{item.orderProducts[0].productName}}' productPrice='{{item.orderProducts[0].productPrice}}' productCount='{{item.orderProducts[0].productCount}}' specsDec='{{item.orderProducts[0].specsDec}}' data-index='{{index}}' />
+
+
+  </block>
+</view>
+
+<view wx:if='{{tabid==3}}' style='margin-top:45px'>
+
+  <block wx:for='{{ordermesfinish}}' wx:key>
+
+    <orderform-cmp wx:if='{{item.orderType==2}}' orderState='{{item.orderState}}' orderId='{{item.orderId}}' createTime='{{item.createTime}}' startTime='{{item.startTime}}' endTime='{{item.endTime}}' payMoney='{{item.payMoney}}' productThumbnail='{{item.orderProducts[0].productThumbnail}}'
+      productName='{{item.orderProducts[0].productName}}' productPrice='{{item.orderProducts[0].productPrice}}' productCount='{{item.orderProducts[0].productCount}}' specsDec='{{item.orderProducts[0].specsDec}}' data-index='{{index}}' />
+
+    <orderform-donkey-cmp wx:if='{{item.orderType==1}}' orderState='{{item.orderState}}' orderId='{{item.orderId}}' createTime='{{item.createTime}}' payMoney='{{item.payMoney}}' productThumbnail='{{item.orderProducts[0].productThumbnail}}'
+      productName='{{item.orderProducts[0].productName}}' productPrice='{{item.orderProducts[0].productPrice}}' productCount='{{item.orderProducts[0].productCount}}' specsDec='{{item.orderProducts[0].specsDec}}' data-index='{{index}}' />
+
+  </block>
+</view>
+
+
+<view class='' style='padding-bottom:20px'></view>

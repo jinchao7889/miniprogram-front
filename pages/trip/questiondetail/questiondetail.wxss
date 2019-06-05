@@ -1,0 +1,20 @@
+/* pages/trip/questiondetail/questiondetail.wxss */
+.Textarea {
+background-color: #fff;
+width: 100%;
+padding: 5rpx;
+height: 250rpx;
+font-size: 15px;
+position: static;
+}
+
+.Input-box {
+position: absolute;
+background-color: #f8f8f8;
+padding: 30rpx;
+padding-bottom: 50rpx;
+bottom: 0;
+left: 0;
+right: 0;
+z-index: 101;
+}
