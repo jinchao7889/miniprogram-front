@@ -196,9 +196,6 @@ Component({
               "Authorization": "bearer " + value
             },
             success(res) {
-              // console.log(res)
-              // console.log(JSON.parse(res.data).data.fileUrl)
-              // that.data.fileUrl = JSON.parse(res.data).data.fileUrl
               that.data.fileUrl = JSON.parse(res.data).data.fileUrl
             }
           })

@@ -20,8 +20,7 @@
 
 
 <block wx:for='{{mymes}}' wx:key='key' wx:if='{{TabCur==1}}'>
-  <donkey-mine bindtap='gotoactivitysignupdetail' title='{{item.title}}' starttime='{{item.startActivity}}' peoplenum='{{item.maxPeopleNumber}}' collectionplace='{{item.collectionPlace}}' covermap='{{item.coverMap}}' data-index='{{index}}' createTime='{{item.createTime}}'
-  />
+  <donkey-mine bindtap='gotoactivitysignupdetail' title='{{item.title}}' starttime='{{item.startActivity}}' peoplenum='{{item.maxPeopleNumber}}' collectionplace='{{item.collectionPlace}}' covermap='{{item.coverMap}}' data-index='{{index}}'/>
 </block>
 
 

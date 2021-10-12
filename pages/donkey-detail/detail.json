@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "livingmes-cmp": "/mycompent/livingmes/mes"
+    "livingmes-cmp": "/mycompent/livingmes/mes",
+    "rich-text": "/mycompent/richtext/richtext"
   },
   "onReachBottomDistance": 50
 }

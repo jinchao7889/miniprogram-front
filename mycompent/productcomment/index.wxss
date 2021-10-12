@@ -1,0 +1,10 @@
+.img-cmt {
+  width: 168rpx;
+  height: 160rpx;
+  border-radius: 10rpx;
+}
+.showimg{
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}

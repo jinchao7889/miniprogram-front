@@ -1,0 +1,38 @@
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
+  <view slot="content">发表评价</view>
+</cu-custom>
+
+<view class='flex padding-sm align-center solids-bottom'>
+  <image src='http://k.zol-img.com.cn/sjbbs/7692/a7691515_s.jpg' style='width:120rpx;height:120rpx;' />
+  <text class='margin-left-sm tx text-grey text-bold text-xl' style='width:520rpx;'>大疆无人机御air电池管家套餐出租包飞含教程</text>
+</view>
+
+<view class=' flex flex-direction'>
+  <textarea class='text-black text-lg padding-sm' style='width:100%;height:500rpx;' placeholder='产品和服务满足您的期待吗？说说它的优点和美中不足的地方吧' placeholder-style='color:grey;' maxlength='-1'></textarea>
+
+
+  <view class='flex justify-around' style='flex-flow: row wrap;'>
+
+    <block wx:if='{{piclist}}' wx:for='{{piclist}}' wx:key>
+      <image wx:if='{{item.type=="image"}}' src='{{item.url}}' data-src='{{item.url}}' data-index='{{index}}' bindlongpress="deletepic" bindtap='previewimage' style='width:200rpx;height:200rpx;margin:10rpx;' class='radius'></image>
+      <video wx:if='{{item.type=="video"}}' id='myvideo' src='{{item.url}}' style='width:200rpx;height:200rpx;margin:10rpx;' class='radius' data-src='{{item.url}}' bindfullscreenchange="screenChange" bindtap='allscreen' enable-play-gesture='{{true}}' controls='{{false}}' objectFit='contain'
+        muted='{{!controls}}' autoplay='{{controls}}' direction='0' show-play-btn='{{false}}' bindended='bindended' />
+    </block>
+
+
+
+    <view wx:if='{{piclength!=6}}' class='flex flex-direction align-center justify-center radius' style='width:200rpx;height:200rpx;border: 4rpx solid #bfbfbf;border-style:dashed;margin-left:6rpx;margin-top:10rpx;' bindtap='addpic' bindlongpress="addvideo">
+      <image src='/icon/add-pic.png' style='width:80rpx;height:80rpx;'></image>
+      <text class='margin-top-sm' style='color: #bfbfbf;'>添加图片</text>
+      <text style='color: #bfbfbf;'>长按添加视频</text>
+    </view>
+
+  </view>
+
+
+
+</view>
+
+<view style='position:fixed;padding-bottom:10rpx;bottom:0;width:100%;' class='flex'>
+  <button class='bg-blue' size='mini'>发布</button>
+</view>

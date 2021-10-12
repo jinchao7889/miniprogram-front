@@ -1,6 +1,6 @@
 <view class='UCenter-bg'>
   <image src='/images/logo.png' class='png' mode='widthFix'></image>
-  <view class='text-xl'>易驴驴行
+  <view class='text-xl'>易驴旅行
     <text class='text-df'>v1.0</text>
   </view>
   <view class='margin-top-sm'>

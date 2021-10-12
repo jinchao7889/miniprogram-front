@@ -13,7 +13,8 @@ Page({
     wxNumber: String,
     contactId:String,
     contactNumber: String,
-    gender:String
+    gender:String,
+    productId:Number
   },
 
   /**
@@ -31,11 +32,29 @@ Page({
         wxNumber: res.wxNumber,
         contactId: res.contactId,
         contactNumber: res.contactNumber,
-        gender: res.gender
+        gender: res.gender,
+        productId: res.productId,
+        activityId: res.activityId
       })
     })
 
   },
+  activitydetail(){
+    wx.navigateTo({
+      url: '/pages/donkey-detail/detail?did='+this.data.activityId,
+    })
+  },
+
+  goorderform(){
+    console.log('点击了查看订单按钮')
+    wx.navigateTo({
+      url: '/pages/mine/ordermes/ordermes',
+    })
+  },
+
+
+
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

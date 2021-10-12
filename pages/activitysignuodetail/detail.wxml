@@ -44,7 +44,8 @@
   </form>
 
 
-<view class='btn flex justify-center' style='width:100%;'>
-<button class=' bg-red text-white'>查看订单</button>
+<view class='btn flex justify-between margin-bottom-sm' style='width:100%;'>
+<button class=' bg-blue text-white' size='mini' bindtap='activitydetail'>活动详情</button>
+<button wx:if='{{productId!=0}}' class=' bg-red text-white' size='mini' bindtap='goorderform'>查看订单</button>
 </view> 
 

@@ -61,7 +61,11 @@ Page({
   onLoad: function (options) {
     this.loadtripcontent(0)
 
+    
+
   },
+
+ 
 
   initClientRect:function () {
     var that = this;

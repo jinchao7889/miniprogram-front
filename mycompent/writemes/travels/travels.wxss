@@ -1,21 +1,32 @@
-.fengmian{
+.fengmian {
   width: 80%;
-  height:300rpx; 
+  height: 300rpx;
 }
-.travel-textarea{
+
+.travel-textarea {
   width: 96%;
-  height:400rpx;
+  height: 400rpx;
 }
-.travel-img{
+
+.travel-img {
   width: 80rpx;
   height: 80rpx;
 }
-.next-write{
+
+.next-write {
   position: fixed;
-  bottom: 20rpx;
+  bottom: 0rpx;
   width: 100%;
 }
 
-page{
+.btn {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  bottom: 700rpx;
+  width: 100%;
+}
+
+page {
   background-color: white;
 }

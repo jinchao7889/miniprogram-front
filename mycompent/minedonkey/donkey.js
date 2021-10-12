@@ -11,8 +11,8 @@ Component({
     title: String,
     starttime: String,
     peoplenum: Number,
-    collectionplace: String,
-    createTime:String
+    collectionplace: String
+    // createTime:String
   },
 
   

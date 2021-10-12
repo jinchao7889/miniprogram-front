@@ -13,7 +13,7 @@
 </view>
 
 <view class='next-write flex justify-start'>
-  <view class='margin-right-sm'>
+  <view class='margin-left-sm'>
     <button class="cu-btn bg-green shadow" bindtap="stepslast">上一步</button>
   </view>
 </view>

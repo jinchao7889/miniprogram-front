@@ -4,24 +4,16 @@ Page({
   data: {
     StatusBar: app.globalData.StatusBar + 6,
     TabbarBot: app.globalData.tabbar_bottom,
-    swiperlist: [
-      'https://img.alicdn.com/imgextra/i3/1773095659/O1CN01ZTgfy11rfrqH00B9p_!!1773095659.jpg_430x430q90.jpg',
-      'https://img.alicdn.com/imgextra/i1/1773095659/O1CN01dSWy871rfrqsim906_!!1773095659.jpg_430x430q90.jpg',
-      'https://img.alicdn.com/imgextra/i4/1773095659/O1CN01tZ7Mcy1rfrqKR5iuD_!!1773095659.jpg_430x430q90.jpg',
-    ],
     TabCur: 0,
     scrollLeft: 0,
     flag: false,
     product: null,
     isshow: false,
-    choosetype: ['御air','御air+电池管家'],
-
-
-
-
-    ischoosea: false,
-    ischooseb: false
+    choosetype: ['御air', '御air+电池管家'],
+    
+    ischoose:0
   },
+
   onLoad: function(options) {
     const that = this;
     console.log(options.productId)
@@ -39,7 +31,6 @@ Page({
       this.setData({
         product: res,
         flag: true,
-
       })
 
     })
@@ -74,27 +65,20 @@ Page({
       isshow: true
     })
   },
+
   tohidden() {
     this.setData({
       isshow: false
     })
   },
 
-  choosea() {
+  choose(e) {
+    var index = e.currentTarget.dataset.index
+
     this.setData({
-      ischoosea: true,
-      ischooseb: false
-    })
-  },
-  chooseb() {
-    this.setData({
-      ischoosea: false,
-      ischooseb: true
+    ischoose:index
     })
   }
-
-
-
 
 
 });

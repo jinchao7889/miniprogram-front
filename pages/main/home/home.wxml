@@ -2,6 +2,16 @@
   <view slot="content">主页</view>
 </cu-custom>
 
+<swiper class="screen-swiper square-dot shadow" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500"  indicator-color="#8799a3" indicator-active-color="#0081ff" bindchange='bindchange' bindtap="gopicdetail">
+  <swiper-item wx:for="{{mainChart}}" wx:key>
+    <image src="{{item.chartUrl}}" mode="aspectFill"  ></image>
+  </swiper-item>
+</swiper>
+
+
+
+
+
 <view class="bg-white padding ">
   <view class="grid col-2 text-center">
     <view>
@@ -28,14 +38,14 @@
   </view>
 </view>
 
-<swiper class="card-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
-  <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+<swiper class="card-swiper square-dot"  circular="true"  bindchange="cardSwiper" bindchange='bindchangetrip' bindtap="gopicdetailtrip">
+  <swiper-item wx:for="{{tripChart}}" wx:key class="{{cardCur==index?'cur':''}}">
     <view class="swiper-item">
-      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
-      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+      <image src="{{item.chartUrl}}" mode="aspectFill"></image>
     </view>
   </swiper-item>
 </swiper>
+
 <view class="cu-bar bg-white  solid-bottom">
   <view class='action'>
     <text class='icon-titles text-orange '></text> 精选游记

@@ -1,6 +1,6 @@
 <!--components/xing-editor.wxml-->
 
-<view class='margin-top padding' style='min-height:100vh;padding-bottom:200px ' >
+<view class=' padding' style='min-height:100vh;padding-bottom:200px;margin-top:10rpx; ' >
 <view class="editor-wrapper "  >
   <block wx:for="{{nodeList}}" wx:for-item="node" wx:for-index="index" wx:key="{{index}}">
 

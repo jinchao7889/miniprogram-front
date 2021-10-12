@@ -1,4 +1,7 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "myrichtext": "/mycompent/myrichtext/myrichtext"
+   
+  }
 }

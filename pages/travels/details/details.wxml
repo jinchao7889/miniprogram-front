@@ -2,26 +2,24 @@
 <nav-bar isBack="{{true}}" bgColor="bg-blue" userhead='{{content.head}}' username='{{content.nickname}}' releaseTime='{{releasetime}}' isfollow='{{content.isFollow}}' userid='{{content.userId}}'></nav-bar>
 <image src='{{content.coverMap}}' mode='aspectFill'></image>
 
-<view class='solid-bottom padding bg-white'>
-  <view class=" text-xl ">
-    <text class="text-black text-bold">{{content.title}}</text>
+<view class='solids-bottom padding bg-white'>
+  <view>
+    <text class="text-black text-bold" style='font-size:60rpx;'>{{content.title}}</text>
   </view>
-  <view class='flex padding justify-around '>
-    <view class=" text-sm ">
+  <view class='flex padding justify-around ' style='padding-bottom:0;'>
+    <view>
       <text class="text-grey">出发时间: {{departureTime}}</text>
     </view>
 
-    <view class=" text-sm ">
+    <view >
       <text class="text-grey">旅行天数: {{content.travelDays}}天</text>
     </view>
   </view>
 
 </view>
 
-<view class='bg-white padding text-lg text-black solid-bottom'>
-  <import src="/wxParse/wxParse.wxml" />
-  <!-- 这一块是富文本 显示的内容区 -->
-  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+<view class='bg-white text-black solid-bottom'>
+  <myrichtext wx:if='{{flag}}' output-type="html" html="{{content.content}}"></myrichtext>
 </view>
 
 <view class=' padding bg-white margin-top-sm'>

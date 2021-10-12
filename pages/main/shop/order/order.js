@@ -212,6 +212,10 @@ Page({
       })
     })
   },
+
+
+
+  
   showModal(e) {
     console.log(e)
     this.setData({

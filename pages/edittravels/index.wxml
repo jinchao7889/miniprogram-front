@@ -1,0 +1,1 @@
+<rich-edit wx:if='{{flag}}' bindfinish="finish" output-type="html" imageUploadUrl="{{imageUploadUrl}}" imageUploadHeader="{{imageUploadHeader}}" imageUploadName="{{imageUploadName}}" title="{{title}}"  html="{{html}}"></rich-edit>

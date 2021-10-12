@@ -53,7 +53,7 @@ Page({
       }
       var list = that.data.ordermes
       that.setData({
-        ordermes: res.dataList
+        ordermes: list.concat(res.dataList) 
       })
       that.data.pages = res.pages
       that.data.nowpages = res.nowPage
@@ -116,7 +116,7 @@ Page({
       }
       var list = that.data.ordermesfinish
       that.setData({
-        ordermesfinish: res.dataList
+        ordermesfinish: list.concat(res.dataList)
       })
       that.data.pagesa = res.pages
       that.data.nowpagesa = res.nowPage

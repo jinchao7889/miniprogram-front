@@ -1,7 +1,7 @@
 <!--商品轮播图-->
 <swiper class="screen-swiper square-dot bg-white" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
-  <swiper-item wx:for="{{swiperlist}}" wx:key="index">
-    <image src="{{item}}" mode='aspectFill'></image>
+  <swiper-item wx:for="{{product.carouselImg}}" wx:key="index">
+    <image src="{{item.imgUrl}}" mode='aspectFill'></image>
   </swiper-item>
 </swiper>
 
@@ -43,11 +43,19 @@
 </view>
 
 <view class="bg-white padding cauni-details-box">
-  <rich-text wx:if='{{flag}}' rich_data="{{product.detailContent}}"></rich-text>
-
+  <rich-text wx:if='{{flag&&0==TabCur}}' rich_data="{{product.detailContent}}"></rich-text>
 </view>
+
+<view wx:if='{{1==TabCur}}'>
+<pdtcomment-cpt />
+<pdtcomment-cpt />
+<pdtcomment-cpt />
+<pdtcomment-cpt />
+<pdtcomment-cpt />
+</view>
+
 <!--TabbarBot为适配全面屏的，如果是全面屏，则底部多出一截空白-->
-<view class="  canui-foor-fixed grid col-2 ">
+<view class="  canui-foor-fixed grid col-2 bg-white">
   <view class='text-center padding-sm '>
     <button class='cu-btn bg-green round shadow-blur'>客服</button>
   </view>
@@ -65,7 +73,7 @@
     <view class='flex flex-direction'>
       <view class='flex'>
         <text class='text-bold text-xl text-red'>￥</text>
-        <text class='text-lg text-red'>28.0元/天</text>
+        <text class='text-lg text-red'>{{product.productPrice}}元/天</text>
       </view>
       <text class='text-df text-gray text-center'>押金(4999元/件)</text>
     </view>
@@ -82,11 +90,13 @@
   <view class='margin-sm flex flex-direction ' style='border-bottom: 4rpx solid rgba(0, 0, 0, 0.1);'>
     <text class='margin-sm text-lg text-black' style='margin-bottom:0;'>套餐类型</text>
 
-    <view wx:for='{{choosetype}}' wx:key class='flex margin-bottom-sm'>
-      <view class='radius bg-grey margin-top-sm margin-left-lg padding-sm' bindtap='choosea'>{{item}}</view>
+    <view wx:for='{{product.productSpecs}}' wx:key class='flex margin-bottom-sm'>
+      <view class='radius {{ischoose==index?"bg-red":"bg-grey"}} margin-top-sm margin-left-lg padding-sm' bindtap='choose' data-index='{{index}}'>{{item.specsName}}</view>
     </view>
 
   </view>
+
+
 
   <view class='flex flex-direction margin-bottom-sm'>
     <text class='margin-sm text-red text-lg text-bold'>认证免押</text>

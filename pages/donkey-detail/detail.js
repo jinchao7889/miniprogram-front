@@ -11,6 +11,7 @@ Page({
     mes: [],
     swiperList: [],
     comment: [],
+    flag: false,
     commentnum: Number,
     pages: 0,
     nowpages: 0,
@@ -24,7 +25,7 @@ Page({
     console.log(options.did)
     this.data.did = options.did
     this.loadactivitydetail()
-    this.loadcomment(0)
+    // this.loadcomment(0)
   },
 
 
@@ -37,6 +38,7 @@ Page({
       that.setData({
         mes: res,
         swiperList: res.carouselImgs,
+        flag: true,
         productId: res.productId
       })
     })
@@ -89,12 +91,20 @@ Page({
   },
 
   gosignup() {
-    console.log('去报名')
+
+
     var aid = this.data.did
     var pid = this.data.productId
-    wx.navigateTo({
-      url: `/pages/donkey-signup/sign-up/signup?aid=${aid}&&pid=${pid}`,
-    })
+    if (pid == 0) {
+      wx.navigateTo({
+        url: `/pages/donkey-signup/freeactivitysignup/index?aid=${aid}`,
+      })
+    } else {
+      wx.navigateTo({
+        url: `/pages/donkey-signup/sign-up/signup?aid=${aid}&&pid=${pid}`,
+      })
+    }
+
   },
 
   golvingmes() {
@@ -163,6 +173,31 @@ Page({
       })
       this.data.temp = 1;
     }
+  },
+
+  onShow: function () {
+    var that = this
+    var data = {
+      "page": 0,
+      "size": 5,
+      "activityId": that.data.did,
+      "parentId": -1,
+      "secondaryId": -1
+    }
+    wxRequest.postRequest(app.globalData.get_activity_comment, data).then(res => {
+      for (var i = 0; i < res.dataList.length; i++) {
+        res.dataList[i]["createTime"] = forMatTime.tsFormatTime(res.dataList[i]["createTime"], 'Y年M月D日')
+      }
+      
+      that.setData({
+        comment: res.dataList,
+        commentnum: res.totalRecord,
+        temp:1
+      })
+
+      that.data.pages = res.pages
+      that.data.nowpages = res.nowPage
+    })
   },
 
 

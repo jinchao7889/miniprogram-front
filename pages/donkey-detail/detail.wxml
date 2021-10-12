@@ -33,11 +33,8 @@
 
 </view>
 
-<view class='bg-white'>
-  <text>旅行详情</text>
-  <view>
-    此处为富文本区域 {{mes.content}}
-  </view>
+<view class="bg-white padding cauni-details-box">
+  <rich-text wx:if='{{flag}}' rich_data="{{mes.content}}"></rich-text>
 </view>
 
 <view class=' padding bg-white margin-top-sm'>

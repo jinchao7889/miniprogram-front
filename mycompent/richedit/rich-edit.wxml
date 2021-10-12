@@ -1,5 +1,9 @@
 <!--components/xing-editor.wxml-->
-<view   class='margin-top' style='height:90vh;'   >
+<view class='flex justify-center' style='margin-top:50rpx' >
+<text style='font-size:64rpx' class='text-bold text-black text-center'>{{title}}</text>
+</view>
+
+<view   class='' style='height:90vh;margin-top:70rpx'   >
 
 <view  class='caozuo text-center shadow text-brown'>
  <text class=" icon-back_android  margin-top" style='font-size:70rpx' data-index="1" catchtap="backpage"></text><view class='text-xs'>返回</view>

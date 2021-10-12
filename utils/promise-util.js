@@ -1,5 +1,6 @@
 // const Promise = require('/lib/es6-promise.js');
 function wxPromise(method, url, data,header) {
+  
   //返回一个Promise对象
   return new Promise(function (resolve, reject) {
     wx.showNavigationBarLoading();
@@ -10,6 +11,14 @@ function wxPromise(method, url, data,header) {
       //在header中统一封装报文头，这样不用每个接口都写一样的报文头定义的代码
       header: header,
       success: function (res) {
+        console.log(res.statusCode)
+        if (res.statusCode==401){
+          wx.navigateTo({
+            url: '/pages/auth/auth',
+          })
+          return
+        }
+
         wx.hideNavigationBarLoading();
 
         //这里可以根据自己项目服务端定义的正确的返回码来进行，接口请求成功后的处理，当然也可以在这里进行报文加解密的统一处理
@@ -46,43 +55,74 @@ function wxPromise(method, url, data,header) {
 }
 
 
-function getRequest(url, data) {
-  try {
-    const value = wx.getStorageSync('access_token')
-    if (value) {
-      // Do something with return value
-      var header = {
-        "Content-Type": "application/json",
-        "Authorization": "bearer" + value
+function getRequest(url, data, flag=1) {
+        // Do something with return value
+  var header;
+  console.log(flag)
+  if(flag==1){
+    try {
+      const value = wx.getStorageSync('access_token')
+      if (value) {
+        // Do something with return value
+         header = {
+          "Content-Type": "application/json",
+          "Authorization": "bearer" + value
+        }
       }
-      return wxPromise("GET", url, data, header);
+    } catch (e) {
+      // Do something when catch error
     }
-
-  } catch (e) {
-    // Do something when catch error
-  }
-  
+  }else{
+    header = {
+      "Content-Type": "application/json"
+    }
+  }  
+     
+    return wxPromise("GET", url, data, header);
 }
 
-function postRequest(url, data) {
-  
-  try {
-    const value = wx.getStorageSync('access_token')
-    if (value) {
-      // Do something with return value
-      var header = {
-        "Content-Type": "application/json",
-        "Authorization": "bearer" + value
-      }
-      return wxPromise("POST", url, data, header);
-    }
-    
-  } catch (e) {
-    // Do something when catch error
-  }
- 
 
+
+
+function postRequest(url, data, flag=1) {
+  var header;
+  console.log(flag,"post")
+    if(flag==1){
+      try {
+        const value = wx.getStorageSync('access_token')
+        if (value) {
+          // Do something with return value
+           header = {
+            "Content-Type": "application/json",
+            "Authorization": "bearer" + value
+          }
+        }
+      } catch (e) {
+        // Do something when catch error
+      }
+    }
+    else {
+         header = {
+          "Content-Type": "application/json"
+        }
+      }
+  return wxPromise("POST", url, data, header);
 }
+// function postRequest(url, data) {
+//   try {
+//       const value = wx.getStorageSync('access_token')
+//       if (value) {
+//         // Do something with return value
+//         var header = {
+//           "Content-Type": "application/json",
+//           "Authorization": "bearer" + value
+//         }
+//         return wxPromise("POST", url, data, header);
+//       }
+//   } catch (e) {
+//     // Do something when catch error
+//   }
+// }
 
 function postFormRequest(url, data) {
   var header = {

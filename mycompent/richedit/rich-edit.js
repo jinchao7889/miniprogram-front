@@ -15,7 +15,7 @@ Component({
 
   properties: {
     //图片上传相关属性，参考wx.uploadFile
-
+    title: String,
     imageUploadUrl: String,
     imageUploadName: String,
     imageUploadHeader: Object,
@@ -31,6 +31,8 @@ Component({
     //输入内容
     nodes: Array,
     html: String,
+    
+    
 
     //内容输出格式，参考rich-text组件，默认为节点列表
     outputType: {
@@ -66,6 +68,7 @@ Component({
 
   attached: function () {
     const windowHeight = wx.getSystemInfoSync();
+    console.log(this.properties.title)
     console.log(windowHeight.screenHeight)
     this.setData({
       windowHeight: windowHeight.screenHeight
@@ -136,6 +139,7 @@ Component({
       if(flag==1){
         nodeList.push(node);
         textBufferPool.push('');
+        
         this.data.attackIndex == nodeList.length - 1;
       }else if(flag==2){
         if(this.data.attackIndex==-1){
@@ -215,11 +219,13 @@ Component({
         }]
       }
       if(this.data.attackIndex==-1){
-        return
+        nodeList.push(node);
+        textBufferPool.push('');
+      } else{
+        nodeList.splice(this.data.attackIndex + 1, 0, node);
+        textBufferPool.splice(this.data.attackIndex + 1, 0, '');
       }
-      nodeList.splice(this.data.attackIndex + 1, 0, node);
-      console.log(nodeList)
-      textBufferPool.splice(this.data.attackIndex + 1, 0, '');
+     
       this.data.attackIndex = nodeList.length-1
       this.setData({
         nodeList,
@@ -570,12 +576,9 @@ Component({
     },
 
     backpage:function(e){
+
       wx.navigateBack({
-
-        //返回
-
         delta: 1
-
       })
     }
   }

@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "nav-bar":"/mycompent/navbar/nav-bar",
-    "comment-cmp": "/mycompent/comment/comment"
+    "comment-cmp": "/mycompent/comment/comment",
+    "myrichtext": "/mycompent/myrichtext/myrichtext"
   },
   "onReachBottomDistance": 50
 }

@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/main/home/home",
+    "pages/auth/auth",
     "pages/trip/home/home",
     "pages/mine/home/home",
     "pages/main/shop/shop",
@@ -9,7 +10,6 @@
     "pages/mine/trip/trip",
     "pages/trip/detailed/detailed",
     "pages/trip/detailedhome/detailed-home",
-    "pages/auth/auth",
     "pages/main/shop/goodsdetialed/goods-detailed",
     "pages/travels/details/details",
     "pages/comment/details/com-details",
@@ -32,7 +32,10 @@
     "pages/mine/authentication/authentication",
     "pages/mine/ordermesdetail/detail",
     "pages/mine/ordermesdonkeydetail/detail",
-    "pages/activitysignuodetail/detail"
+    "pages/activitysignuodetail/detail",
+    "pages/edittravels/index",
+    "pages/donkey-signup/freeactivitysignup/index",
+    "pages/pdtcomment/pdtcomment"
   ],
   "window": {
     "navigationBarBackgroundColor": "#39b54a",

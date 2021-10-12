@@ -2,9 +2,9 @@
   <view class="cu-item shadow">
     <view class="image">
       <image src="{{covermap}}" mode="aspectFill"></image>
-      <!-- <view class="cu-tag bg-blue">最新</view> -->
-
+      <view class="cu-tag bg-red">已报名</view>
     </view>
+
     <view class='padding-sm'>
       <view class=" text-xl ">
         <text class="text-black text-bold">{{title}}</text>
@@ -25,11 +25,12 @@
         <text class="text-black text-bold margin-left-sm ">{{collectionplace}}</text>
       </view>
 
-       <view class=" text-df margin-top-xs">
+       <!-- <view class=" text-df margin-top-xs">
         <text class="text-black ">报名时间:</text>
         <text class="text-black text-bold margin-left-sm ">{{createTime}}</text>
-      </view>
+      </view> -->
 
     </view>
+    
   </view>
 </view>

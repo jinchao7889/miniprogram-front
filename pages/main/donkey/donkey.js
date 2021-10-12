@@ -83,7 +83,7 @@ loadmoremymes(a){
   gotodonkeydetail(e) {
     var index = e.currentTarget.dataset.index
     var did=this.data.mes[index].id
-    console.log(did)
+    console.log('did:',did)
     wx.navigateTo({
       url: `/pages/donkey-detail/detail?did=${did}`,
     })
@@ -109,7 +109,7 @@ loadmoremymes(a){
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    this.loadmoremymes(0);
   },
 
   /**

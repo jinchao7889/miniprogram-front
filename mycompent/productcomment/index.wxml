@@ -1,0 +1,28 @@
+<view class="cu-list menu-avatar comment ">
+  <view class="cu-item" style='padding-bottom:0px'>
+    <image class="cu-avatar round " src='http://k.zol-img.com.cn/sjbbs/7692/a7691515_s.jpg'></image>
+    <view class="content">
+      <text class="text-gray tx">飞翔的企鹅</text>
+      <view class=" text-black text-content text-df">
+        无人机太好用了，服务也很好，送货上门，还教我怎么用，很棒！下次还会继续租赁的
+      </view>
+
+      <view class='showimg '>
+        <block wx:for='{{piclist}}' wx:key>
+          <image wx:if='{{item.type=="image"}}' src='{{item.url}}' class='img-cmt' style='margin:4rpx;' data-src='{{item.url}}' bindtap='previewImage' data-index='{{index}}' /> 
+          <video wx:if='{{item.type=="video"}}' id='myvideo' src='{{item.url}}' class='img-cmt' style='margin:4rpx;' data-src='{{item.url}}' bindfullscreenchange="screenChange" bindtap='allscreen' enable-play-gesture='{{true}}' controls='{{false}}' objectFit='contain' muted='{{!controls}}' autoplay='{{controls}}' direction='0' show-play-btn='{{false}}' bindended='bindended'/>
+        </block>
+      </view>
+
+
+
+      <view class="flex justify-between ">
+        <view class="text-gray text-sm">2019年4月3日 14:32:41</view>
+      </view>
+
+
+    </view>
+  </view>
+
+
+</view>
